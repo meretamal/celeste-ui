@@ -6,6 +6,18 @@ export default {
   title: 'CButton',
   component: CButton,
   argTypes: {
+    color: {
+      control: { type: 'select' },
+      options: ['primary', 'success', 'info', 'warning', 'danger'],
+      description: 'Changes the size of the button',
+      defaultValue: 'primary',
+      table: {
+        type: {
+          summary: '"primary" | "sucess" | "info" | "warning" | ""danger"',
+        },
+        defaultValue: { summary: 'primary' },
+      },
+    },
     size: {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],

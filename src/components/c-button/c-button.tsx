@@ -9,6 +9,12 @@ export const CButton = defineComponent({
       type: String as PropType<'small' | 'medium' | 'large'>,
       default: 'medium',
     },
+    color: {
+      type: String as PropType<
+        'primary' | 'success' | 'info' | 'warning' | 'danger'
+      >,
+      default: 'primary',
+    },
   },
   setup(props, { slots }) {
     const theme = useTheme();
@@ -21,16 +27,16 @@ export const CButton = defineComponent({
         borderRadius: '4px',
         cursor: 'pointer',
         transition: 'all 0.3s ease-in-out',
-        backgroundColor: theme.colors.primary,
+        backgroundColor: theme.colors[props.color],
         color: '#fff',
         textAlign: 'center',
         textDecoration: 'none',
         '&:hover': {
-          backgroundColor: `${darken(0.1, theme.colors.primary)}`,
+          backgroundColor: `${darken(0.1, theme.colors[props.color])}`,
         },
         '&:focus': {
           outline: 'none',
-          boxShadow: `0 0 0 3px ${lighten(0.3, theme.colors.primary)}`,
+          boxShadow: `0 0 0 3px ${lighten(0.3, theme.colors[props.color])}`,
         },
         '&:active': {
           transform: 'translateY(2px)',
