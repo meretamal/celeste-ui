@@ -1,6 +1,7 @@
 import { defineComponent, computed, PropType } from 'vue';
 import { css } from '@emotion/css';
 import { darken, lighten } from 'polished';
+import { useTheme } from '../../composables';
 
 export const CButton = defineComponent({
   props: {
@@ -10,7 +11,7 @@ export const CButton = defineComponent({
     },
   },
   setup(props, { slots }) {
-    const primary = '#3ad5dE';
+    const theme = useTheme();
 
     const baseClass = computed(() =>
       css({
@@ -20,16 +21,16 @@ export const CButton = defineComponent({
         borderRadius: '4px',
         cursor: 'pointer',
         transition: 'all 0.3s ease-in-out',
-        backgroundColor: primary,
+        backgroundColor: theme.colors.primary,
         color: '#fff',
         textAlign: 'center',
         textDecoration: 'none',
         '&:hover': {
-          backgroundColor: `${darken(0.1, primary)}`,
+          backgroundColor: `${darken(0.1, theme.colors.primary)}`,
         },
         '&:focus': {
           outline: 'none',
-          boxShadow: `0 0 0 3px ${lighten(0.3, primary)}`,
+          boxShadow: `0 0 0 3px ${lighten(0.3, theme.colors.primary)}`,
         },
         '&:active': {
           transform: 'translateY(2px)',
