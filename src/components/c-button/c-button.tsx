@@ -1,5 +1,6 @@
 import { defineComponent, computed, PropType } from 'vue';
 import { css } from '@emotion/css';
+import { darken, lighten } from 'polished';
 
 export const CButton = defineComponent({
   props: {
@@ -9,6 +10,8 @@ export const CButton = defineComponent({
     },
   },
   setup(props, { slots }) {
+    const primary = '#3ad5dE';
+
     const baseClass = computed(() =>
       css({
         display: 'inline-block',
@@ -17,16 +20,16 @@ export const CButton = defineComponent({
         borderRadius: '4px',
         cursor: 'pointer',
         transition: 'all 0.3s ease-in-out',
-        backgroundColor: '#4CAF50',
+        backgroundColor: primary,
         color: '#fff',
         textAlign: 'center',
         textDecoration: 'none',
         '&:hover': {
-          backgroundColor: '#3e8e41',
+          backgroundColor: `${darken(0.1, primary)}`,
         },
         '&:focus': {
           outline: 'none',
-          boxShadow: '0 0 0 3px rgba(76, 175, 80, 0.4)',
+          boxShadow: `0 0 0 3px ${lighten(0.3, primary)}`,
         },
         '&:active': {
           transform: 'translateY(2px)',
