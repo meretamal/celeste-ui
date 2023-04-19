@@ -9,7 +9,7 @@ export default {
     color: {
       control: { type: 'select' },
       options: ['primary', 'success', 'info', 'warning', 'danger'],
-      description: 'Changes the size of the button',
+      description: 'Changes the color of the button',
       defaultValue: 'primary',
       table: {
         type: {
