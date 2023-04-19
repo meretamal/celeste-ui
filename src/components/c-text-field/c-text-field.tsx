@@ -11,6 +11,21 @@ export const CTextField = defineComponent({
       >,
       default: 'primary',
     },
+    type: {
+      type: String as PropType<
+        | 'text'
+        | 'email'
+        | 'date'
+        | 'datetime-local'
+        | 'month'
+        | 'password'
+        | 'tel'
+        | 'time'
+        | 'url'
+        | 'week'
+      >,
+      default: 'text',
+    },
   },
   setup(props) {
     const theme = useTheme();
@@ -32,6 +47,6 @@ export const CTextField = defineComponent({
         },
       }),
     );
-    return () => <input class={baseClass.value} />;
+    return () => <input type={props.type} class={baseClass.value} />;
   },
 });

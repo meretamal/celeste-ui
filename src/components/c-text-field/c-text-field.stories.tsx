@@ -18,6 +18,30 @@ export default {
         defaultValue: { summary: '"primary"' },
       },
     },
+    type: {
+      control: { type: 'select' },
+      options: [
+        'text',
+        'email',
+        'date',
+        'datetime-local',
+        'month',
+        'password',
+        'tel',
+        'time',
+        'url',
+        'week',
+      ],
+      description: 'Sets the input native type',
+      defaultValue: 'text',
+      table: {
+        type: {
+          summay:
+            '"text" | "email" | "date" | "datetime-local" | "month" | "password" | "tel" | "time" | "url" | "week"',
+        },
+        defaultValue: { summary: '"text"' },
+      },
+    },
   },
 } as Meta<typeof CTextField>;
 
