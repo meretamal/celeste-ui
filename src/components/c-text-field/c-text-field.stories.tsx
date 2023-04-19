@@ -5,7 +5,20 @@ import { CCssReset } from '../c-css-reset';
 export default {
   title: 'CTextField',
   component: CTextField,
-  argTypes: {},
+  argTypes: {
+    color: {
+      control: { type: 'select' },
+      options: ['primary', 'success', 'info', 'warning', 'danger'],
+      description: 'Changes the color of the button',
+      defaultValue: 'primary',
+      table: {
+        type: {
+          summary: '"primary" | "sucess" | "info" | "warning" | ""danger"',
+        },
+        defaultValue: { summary: '"primary"' },
+      },
+    },
+  },
 } as Meta<typeof CTextField>;
 
 export const Template: StoryFn<typeof CTextField> = (args) => ({
