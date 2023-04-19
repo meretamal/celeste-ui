@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue';
 import { injectGlobal } from '@emotion/css';
 
-export const CCssBaseline = defineComponent({
+export const CCssReset = defineComponent({
   setup(_, { slots }) {
     injectGlobal({
       '*': {
