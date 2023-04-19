@@ -15,7 +15,7 @@ export default {
         type: {
           summary: '"primary" | "sucess" | "info" | "warning" | ""danger"',
         },
-        defaultValue: { summary: 'primary' },
+        defaultValue: { summary: '"primary"' },
       },
     },
     size: {
@@ -25,7 +25,16 @@ export default {
       defaultValue: 'medium',
       table: {
         type: { summary: '"small" | "medium" | "large"' },
-        defaultValue: { summary: 'medium' },
+        defaultValue: { summary: '"medium"' },
+      },
+    },
+    fullWidth: {
+      control: { type: 'boolean' },
+      description: 'Sets the width to 100%',
+      defaultValue: false,
+      table: {
+        type: { summary: 'false | true' },
+        defaultValue: { summary: 'true' },
       },
     },
   },

@@ -15,6 +15,9 @@ export const CButton = defineComponent({
       >,
       default: 'primary',
     },
+    fullWidth: {
+      type: Boolean,
+    },
   },
   setup(props, { slots }) {
     const theme = useTheme();
@@ -53,11 +56,17 @@ export const CButton = defineComponent({
           fontSize: '1.2rem',
           padding: '1rem 2rem',
         },
+        '&--full-width': {
+          width: '100%',
+        },
       }),
     );
     const classes = computed(() => [
       baseClass.value,
       `${baseClass.value}--${props.size}`,
+      {
+        [`${baseClass.value}--full-width`]: props.fullWidth,
+      },
     ]);
     return () => (
       <button class={classes.value} type="button">
