@@ -1,1 +1,1 @@
-// package entrypoint
+export * from './components';
