@@ -11,6 +11,10 @@ export const CTextField = defineComponent({
       >,
       default: 'primary',
     },
+    size: {
+      type: String as PropType<'medium' | 'large'>,
+      default: 'medium',
+    },
     type: {
       type: String as PropType<
         | 'text'
@@ -34,9 +38,7 @@ export const CTextField = defineComponent({
       css({
         display: 'block',
         width: '100%',
-        height: '2.5rem',
         fontSize: '1rem',
-        padding: '0.5rem',
         border: '2px solid #ccc',
         borderRadius: '4px',
         transition: 'all 0.3s ease-in-out',
@@ -45,8 +47,18 @@ export const CTextField = defineComponent({
           boxShadow: `0 0 0 3px ${lighten(0.3, theme.colors[props.color])}`,
           borderColor: theme.colors[props.color],
         },
+        '&--medium': {
+          padding: '0.5625rem 0.875rem',
+        },
+        '&--large': {
+          padding: '1rem 0.875rem',
+        },
       }),
     );
-    return () => <input type={props.type} class={baseClass.value} />;
+    const classes = computed(() => [
+      baseClass.value,
+      `${baseClass.value}--${props.size}`,
+    ]);
+    return () => <input type={props.type} class={classes.value} />;
   },
 });

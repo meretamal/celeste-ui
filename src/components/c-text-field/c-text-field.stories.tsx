@@ -18,6 +18,16 @@ export default {
         defaultValue: { summary: '"primary"' },
       },
     },
+    size: {
+      control: { type: 'select' },
+      options: ['medium', 'large'],
+      description: 'Changes the size of the text field',
+      defaultValue: 'medium',
+      table: {
+        type: { summary: '"medium" | "large"' },
+        defaultValue: { summary: '"medium"' },
+      },
+    },
     type: {
       control: { type: 'select' },
       options: [
