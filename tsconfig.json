@@ -6,12 +6,15 @@
     "moduleResolution": "Node",
     "strict": true,
     "jsx": "preserve",
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
-    "skipLibCheck": true,
-    "noEmit": true
+    "skipLibCheck": true
   },
   "include": ["src", ".storybook"],
   "references": [{ "path": "./tsconfig.node.json" }]
