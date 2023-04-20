@@ -18,6 +18,15 @@ export default {
         defaultValue: { summary: '"primary"' },
       },
     },
+    error: {
+      control: { type: 'boolean' },
+      description: "Indicates if there's an error with the given input",
+      defaultValue: false,
+      table: {
+        type: { summary: 'false | true' },
+        defaultValue: { summary: 'true' },
+      },
+    },
     size: {
       control: { type: 'select' },
       options: ['medium', 'large'],
