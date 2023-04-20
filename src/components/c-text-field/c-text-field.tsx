@@ -4,6 +4,7 @@ import { lighten } from 'polished';
 import { useTheme } from '../../composables';
 
 export const CTextField = defineComponent({
+  name: 'CTextField',
   props: {
     color: {
       type: String as PropType<
@@ -47,8 +48,11 @@ export const CTextField = defineComponent({
         transition: 'all 0.3s ease-in-out',
         '&:focus': {
           outline: 'none',
-          boxShadow: `0 0 0 3px ${lighten(0.3, theme.colors[props.color])}`,
-          borderColor: theme.colors[props.color],
+          boxShadow: `0 0 0 3px ${lighten(
+            0.3,
+            theme.value.colors[props.color],
+          )}`,
+          borderColor: theme.value.colors[props.color],
         },
         '&--medium': {
           padding: '0.5625rem 0.875rem',
@@ -57,12 +61,12 @@ export const CTextField = defineComponent({
           padding: '1rem 0.875rem',
         },
         '&--error': {
-          boxShadow: `0 0 0 3px ${lighten(0.3, theme.colors.danger)}`,
-          borderColor: theme.colors.danger,
+          boxShadow: `0 0 0 3px ${lighten(0.3, theme.value.colors.danger)}`,
+          borderColor: theme.value.colors.danger,
           '&:focus': {
             outline: 'none',
-            boxShadow: `0 0 0 3px ${lighten(0.3, theme.colors.danger)}`,
-            borderColor: theme.colors.danger,
+            boxShadow: `0 0 0 3px ${lighten(0.3, theme.value.colors.danger)}`,
+            borderColor: theme.value.colors.danger,
           },
         },
       }),

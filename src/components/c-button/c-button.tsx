@@ -4,6 +4,7 @@ import { darken, lighten } from 'polished';
 import { useTheme } from '../../composables';
 
 export const CButton = defineComponent({
+  name: 'CButton',
   props: {
     size: {
       type: String as PropType<'small' | 'medium' | 'large'>,
@@ -30,7 +31,7 @@ export const CButton = defineComponent({
       css({
         display: 'inline-block',
         fontWeight: 'bold',
-        border: `1px solid ${theme.colors[props.color]}`,
+        border: `1px solid ${theme.value.colors[props.color]}`,
         borderRadius: '4px',
         cursor: 'pointer',
         transition: 'all 0.3s ease-in-out',
@@ -42,25 +43,31 @@ export const CButton = defineComponent({
         },
         '&:focus': {
           outline: 'none',
-          boxShadow: `0 0 0 3px ${lighten(0.3, theme.colors[props.color])}`,
+          boxShadow: `0 0 0 3px ${lighten(
+            0.3,
+            theme.value.colors[props.color],
+          )}`,
         },
         '&--contained': {
-          backgroundColor: theme.colors[props.color],
+          backgroundColor: theme.value.colors[props.color],
           color: '#fff',
           '&:hover': {
-            backgroundColor: `${darken(0.1, theme.colors[props.color])}`,
+            backgroundColor: `${darken(0.1, theme.value.colors[props.color])}`,
           },
           '&:focus': {
             outline: 'none',
-            boxShadow: `0 0 0 3px ${lighten(0.3, theme.colors[props.color])}`,
+            boxShadow: `0 0 0 3px ${lighten(
+              0.3,
+              theme.value.colors[props.color],
+            )}`,
           },
         },
         '&--outlined': {
           backgroundColor: 'transparent',
-          border: `1px solid ${theme.colors[props.color]}`,
-          color: theme.colors[props.color],
+          border: `1px solid ${theme.value.colors[props.color]}`,
+          color: theme.value.colors[props.color],
           '&:hover': {
-            backgroundColor: `${lighten(0.4, theme.colors[props.color])}`,
+            backgroundColor: `${lighten(0.4, theme.value.colors[props.color])}`,
           },
         },
         '&--small': {
