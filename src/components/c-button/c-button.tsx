@@ -45,16 +45,16 @@ export const CButton = defineComponent({
           transform: 'translateY(2px)',
         },
         '&--small': {
-          fontSize: '0.8rem',
-          padding: '0.5rem 1rem',
+          fontSize: '0.8125rem',
+          padding: '0.25rem 0.625rem',
         },
         '&--medium': {
-          fontSize: '1rem',
-          padding: '0.75rem 1.5rem',
+          fontSize: '0.875rem',
+          padding: '0.375rem 1rem',
         },
         '&--large': {
-          fontSize: '1.2rem',
-          padding: '1rem 2rem',
+          fontSize: '0.9375rem',
+          padding: '0.5rem 1.375rem',
         },
         '&--full-width': {
           width: '100%',
