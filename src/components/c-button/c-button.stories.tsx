@@ -37,6 +37,16 @@ export default {
         defaultValue: { summary: 'true' },
       },
     },
+    variant: {
+      control: { type: 'select' },
+      options: ['contained', 'outlined'],
+      description: 'Changes the variant of the button',
+      defaultValue: 'contained',
+      table: {
+        type: { summary: '"contained" | "outlined"' },
+        defaultValue: { summary: '"contained"' },
+      },
+    },
   },
 } as Meta<typeof CButton>;
 

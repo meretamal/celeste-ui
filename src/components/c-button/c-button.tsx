@@ -18,6 +18,10 @@ export const CButton = defineComponent({
     fullWidth: {
       type: Boolean,
     },
+    variant: {
+      type: String as PropType<'contained' | 'outlined'>,
+      default: 'contained',
+    },
   },
   setup(props, { slots }) {
     const theme = useTheme();
@@ -26,23 +30,38 @@ export const CButton = defineComponent({
       css({
         display: 'inline-block',
         fontWeight: 'bold',
-        border: 'none',
+        border: `1px solid ${theme.colors[props.color]}`,
         borderRadius: '4px',
         cursor: 'pointer',
         transition: 'all 0.3s ease-in-out',
-        backgroundColor: theme.colors[props.color],
-        color: '#fff',
         textAlign: 'center',
         textDecoration: 'none',
-        '&:hover': {
-          backgroundColor: `${darken(0.1, theme.colors[props.color])}`,
+        lineHeight: '1.75',
+        '&:active': {
+          transform: 'translateY(2px)',
         },
         '&:focus': {
           outline: 'none',
           boxShadow: `0 0 0 3px ${lighten(0.3, theme.colors[props.color])}`,
         },
-        '&:active': {
-          transform: 'translateY(2px)',
+        '&--contained': {
+          backgroundColor: theme.colors[props.color],
+          color: '#fff',
+          '&:hover': {
+            backgroundColor: `${darken(0.1, theme.colors[props.color])}`,
+          },
+          '&:focus': {
+            outline: 'none',
+            boxShadow: `0 0 0 3px ${lighten(0.3, theme.colors[props.color])}`,
+          },
+        },
+        '&--outlined': {
+          backgroundColor: 'transparent',
+          border: `1px solid ${theme.colors[props.color]}`,
+          color: theme.colors[props.color],
+          '&:hover': {
+            backgroundColor: `${lighten(0.4, theme.colors[props.color])}`,
+          },
         },
         '&--small': {
           fontSize: '0.8125rem',
@@ -64,6 +83,7 @@ export const CButton = defineComponent({
     const classes = computed(() => [
       baseClass.value,
       `${baseClass.value}--${props.size}`,
+      `${baseClass.value}--${props.variant}`,
       {
         [`${baseClass.value}--full-width`]: props.fullWidth,
       },
