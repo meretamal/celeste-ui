@@ -1,3 +1,3 @@
 export * from './components';
 export * from './composables';
-export * from './types';
+export { type Theme } from './types';
