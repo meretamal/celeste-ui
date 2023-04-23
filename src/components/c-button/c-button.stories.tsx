@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from '@storybook/vue3';
 import { CButton } from './c-button';
-import { CCssReset } from '../c-css-reset';
+import { CCssReset } from '../c-css-baseline';
 
 export default {
   title: 'CButton',

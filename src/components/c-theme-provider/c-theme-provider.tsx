@@ -3,8 +3,8 @@ import merge from 'lodash/merge';
 import { baseTheme } from '../../theme';
 import { Theme, DeepPartial } from '../../types';
 
-export const CProvider = defineComponent({
-  name: 'CProvider',
+export const CThemeProvider = defineComponent({
+  name: 'CThemeProvider',
   props: {
     theme: {
       type: Object as PropType<DeepPartial<Theme>>,

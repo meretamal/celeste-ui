@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from '@storybook/vue3';
 import { CTextField } from './c-text-field';
-import { CCssReset } from '../c-css-reset';
+import { CCssReset } from '../c-css-baseline';
 
 export default {
   title: 'CTextField',
