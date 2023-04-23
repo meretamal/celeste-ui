@@ -1679,6 +1679,11 @@
     tiny-glob "^0.2.9"
     tslib "^2.4.0"
 
+"@polymorphic-factory/vue@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@polymorphic-factory/vue/-/vue-0.2.0.tgz#728dabf5bdaf007faa9e7872bcbe02dcc0dca72e"
+  integrity sha512-0MKD0A48lRTl2Os2jnCOjdwJOstcFxdzcXcrhM0ER6gSuRNw7rS06nS0IbjZcFQP+nyrWSBAXhOKiWR47QYnyg==
+
 "@storybook/addon-actions@6.5.16", "@storybook/addon-actions@^6.5.16":
   version "6.5.16"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.5.16.tgz#2d7679f64899bef165a338582cb928102a09e364"
