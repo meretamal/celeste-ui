@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from '@storybook/vue3';
 import { CTypography } from './c-typograpy';
-import { CCssReset } from '../c-css-reset';
+import { CCssBaseline } from '../c-css-baseline';
 
 export default {
   title: 'CTypography',
@@ -25,9 +25,9 @@ export const Template: StoryFn<typeof CTypography> = (args) => ({
   components: { CTypography },
   setup() {
     return () => (
-      <CCssReset>
+      <CCssBaseline>
         <CTypography {...args}>Button</CTypography>
-      </CCssReset>
+      </CCssBaseline>
     );
   },
 });

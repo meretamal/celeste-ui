@@ -9,6 +9,10 @@ export const CTypography = defineComponent({
       >,
       default: 'b1',
     },
+    component: {
+      type: String,
+      default: null,
+    },
   },
   setup(props, { slots }) {
     const defaultMapping = {
@@ -22,7 +26,9 @@ export const CTypography = defineComponent({
       b2: 'p',
     };
 
-    const Tag = computed(() => defaultMapping[props.variant]);
+    const Tag = computed(
+      () => props.component || defaultMapping[props.variant],
+    );
     // eslint-disable-next-line react/jsx-pascal-case
     return () => <Tag.value>{slots.default?.()}</Tag.value>;
   },
