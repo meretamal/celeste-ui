@@ -25,7 +25,7 @@ First of all, install the necessary packages. This library uses @emotion/css to 
 <h4>NPM</h4>
 
 ```bash
-mpm install celetes-ui @emotion/css@^11
+npm install celetes-ui @emotion/css@^11
 ```
 
 <h4>Yarn</h4>
