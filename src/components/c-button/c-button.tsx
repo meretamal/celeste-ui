@@ -46,7 +46,7 @@ export const CButton = defineComponent({
         '&:focus': {
           outline: 'none',
           boxShadow: `0 0 0 3px ${lighten(
-            getLuminance(theme.value.colors[props.color]) / 2,
+            Math.min(0.3, getLuminance(theme.value.colors[props.color]) / 2),
             theme.value.colors[props.color],
           )}`,
         },
@@ -54,7 +54,14 @@ export const CButton = defineComponent({
           backgroundColor: theme.value.colors[props.color],
           color: '#fff',
           '&:hover': {
-            backgroundColor: `${darken(0.1, theme.value.colors[props.color])}`,
+            backgroundColor: `${darken(
+              Math.min(0.1, getLuminance(theme.value.colors[props.color]) / 10),
+              theme.value.colors[props.color],
+            )}`,
+            borderColor: `${darken(
+              Math.min(0.1, getLuminance(theme.value.colors[props.color]) / 10),
+              theme.value.colors[props.color],
+            )}`,
           },
         },
         '&--outlined': {
@@ -62,7 +69,10 @@ export const CButton = defineComponent({
           border: `1px solid ${theme.value.colors[props.color]}`,
           color: theme.value.colors[props.color],
           '&:hover': {
-            backgroundColor: `${lighten(0.4, theme.value.colors[props.color])}`,
+            backgroundColor: `${lighten(
+              Math.min(0.4, getLuminance(theme.value.colors[props.color])),
+              theme.value.colors[props.color],
+            )}`,
           },
         },
         '&--small': {
