@@ -1,6 +1,7 @@
 import { PropType, defineComponent, provide, computed } from 'vue';
 import merge from 'lodash/merge';
 import { baseTheme } from '../../theme/base';
+import { useButtonStyles } from '../../theme/button';
 import { Theme, DeepPartial } from '../../types';
 
 export const CThemeProvider = defineComponent({
@@ -14,6 +15,8 @@ export const CThemeProvider = defineComponent({
   setup(props, { slots }) {
     const theme = computed<Theme>(() => merge(baseTheme, props.theme));
     provide('theme', theme);
+
+    useButtonStyles();
     return () => slots.default?.();
   },
 });
