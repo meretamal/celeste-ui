@@ -1,6 +1,6 @@
 import { defineComponent, computed, PropType } from 'vue';
 import { celeste } from '../../celeste';
-import { useButtonStyles } from '../../theme/button';
+import { useButtonStyles } from './c-button.styles';
 
 export const CButton = defineComponent({
   name: 'CButton',

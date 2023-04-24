@@ -1,7 +1,7 @@
 import { provide, computed, readonly, inject, ComputedRef } from 'vue';
 import { CSSObject, css } from '@emotion/css';
 import { lighten, darken, getLuminance } from 'polished';
-import { useTheme } from '../composables';
+import { useTheme } from '../../composables';
 
 const key = 'c-button.class';
 

@@ -1,8 +1,8 @@
 import { PropType, defineComponent, provide, computed } from 'vue';
 import merge from 'lodash/merge';
-import { baseTheme } from '../../theme/base';
-import { useButtonStyles } from '../../theme/button';
-import { useTextFieldStyles } from '../../theme/text-field';
+import { baseTheme } from '../../theme';
+import { useButtonStyles } from '../c-button/c-button.styles';
+import { useTextFieldStyles } from '../c-text-field/c-text-field.styles';
 import { Theme, DeepPartial } from '../../types';
 
 export const CThemeProvider = defineComponent({
