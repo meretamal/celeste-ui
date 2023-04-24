@@ -9,7 +9,7 @@ export const CCSSBaseline = defineComponent({
         padding: 0,
         margin: 0,
         boxSizing: 'border-box',
-        fontFamily: "'Source Sans Pro', sans-serif",
+        fontFamily: "'Lato', sans-serif",
       },
     });
     return () => slots.default?.();
