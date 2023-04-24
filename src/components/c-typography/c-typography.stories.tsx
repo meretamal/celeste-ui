@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/vue3';
-import { CCSSBaseline } from '@/components/c-css-baseline';
+import { CThemeProvider } from '@/components/c-theme-provider';
 import { CTypography } from './c-typograpy';
 
 export default {
@@ -60,9 +60,9 @@ export const Template: StoryFn<typeof CTypography> = (args) => ({
   components: { CTypography },
   setup() {
     return () => (
-      <CCSSBaseline>
+      <CThemeProvider>
         <CTypography {...args}>Text</CTypography>
-      </CCSSBaseline>
+      </CThemeProvider>
     );
   },
 });
