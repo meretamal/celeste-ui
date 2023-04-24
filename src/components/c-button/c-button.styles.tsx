@@ -44,6 +44,9 @@ export const useButtonStyles = () => {
     '&--outlined': {
       backgroundColor: 'transparent',
     },
+    '&--text': {
+      backgroundColor: 'transparent',
+    },
     ...(
       Object.keys(theme.value.colors) as (keyof typeof theme.value.colors)[]
     ).reduce(
@@ -79,6 +82,20 @@ export const useButtonStyles = () => {
               Math.min(0.4, getLuminance(theme.value.colors[color])),
               theme.value.colors[color],
             )}`,
+          },
+        },
+        [`&--text&--${color}`]: {
+          border: 'none',
+          color: theme.value.colors[color],
+          '&:hover': {
+            backgroundColor: `${lighten(
+              Math.min(0.4, getLuminance(theme.value.colors[color])),
+              theme.value.colors[color],
+            )}`,
+          },
+          '&:focus': {
+            boxShadow: 'none',
+            textDecoration: 'underline',
           },
         },
       }),

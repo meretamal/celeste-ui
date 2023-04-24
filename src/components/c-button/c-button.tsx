@@ -19,7 +19,7 @@ export const CButton = defineComponent({
       type: Boolean,
     },
     variant: {
-      type: String as PropType<'contained' | 'outlined'>,
+      type: String as PropType<'contained' | 'outlined' | 'text'>,
       default: 'contained',
     },
   },

@@ -40,11 +40,11 @@ export default {
     },
     variant: {
       control: { type: 'select' },
-      options: ['contained', 'outlined'],
+      options: ['contained', 'outlined', 'text'],
       description: 'Changes the variant of the button',
       defaultValue: 'contained',
       table: {
-        type: { summary: '"contained" | "outlined"' },
+        type: { summary: '"contained" | "outlined" | "text"' },
         defaultValue: { summary: '"contained"' },
       },
     },
