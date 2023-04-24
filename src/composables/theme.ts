@@ -3,7 +3,10 @@ import { baseTheme } from '../theme/base';
 import { Theme } from '../types';
 
 export const useTheme = () => {
-  const injectedTheme = inject<ComputedRef<Theme>>('theme');
+  const injectedTheme = inject<ComputedRef<Theme> | undefined>(
+    'theme',
+    undefined,
+  );
   const theme = computed(() => injectedTheme?.value || baseTheme);
   return theme;
 };
