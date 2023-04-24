@@ -1,4 +1,4 @@
-import { defineComponent, computed, PropType, watch } from 'vue';
+import { defineComponent, computed, PropType } from 'vue';
 import { css } from '@emotion/css';
 import { darken, lighten, getLuminance } from 'polished';
 import { useTheme } from '../../composables';
