@@ -1,4 +1,4 @@
-import { PropType, computed, defineComponent, Fragment } from 'vue';
+import { PropType, computed, defineComponent } from 'vue';
 import { celeste } from '@/celeste';
 import { useTextFieldStyles } from './c-text-field.styles';
 
