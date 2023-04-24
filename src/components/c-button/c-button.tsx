@@ -1,6 +1,6 @@
-import { defineComponent, computed, PropType } from 'vue';
+import { defineComponent, computed, PropType, watch } from 'vue';
 import { css } from '@emotion/css';
-import { darken, lighten } from 'polished';
+import { darken, lighten, getLuminance } from 'polished';
 import { useTheme } from '../../composables';
 import { celeste } from '../../celeste';
 
@@ -46,7 +46,7 @@ export const CButton = defineComponent({
         '&:focus': {
           outline: 'none',
           boxShadow: `0 0 0 3px ${lighten(
-            0.3,
+            getLuminance(theme.value.colors[props.color]) / 2,
             theme.value.colors[props.color],
           )}`,
         },
@@ -59,7 +59,7 @@ export const CButton = defineComponent({
           '&:focus': {
             outline: 'none',
             boxShadow: `0 0 0 3px ${lighten(
-              0.3,
+              getLuminance(theme.value.colors[props.color]) / 2,
               theme.value.colors[props.color],
             )}`,
           },
