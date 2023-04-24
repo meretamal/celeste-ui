@@ -53,7 +53,7 @@ Finally, install the Lato font. For this you can use Google Web Fonts:
 <p>To start using the components, please follow these steps:</p>
 
 1. Wrap your application with the `CThemeProvider`
-```ts
+```html
 <template>
   <CThemeProvider>
     <!-- The rest of your app -->
@@ -65,7 +65,7 @@ import { CThemeProvider } from 'celeleste-ui';
 ```
 
 1. Now you can start using components like so!:
-```ts
+```html
 <template>
   <CButton>Click me!</CButton>
 </template>
