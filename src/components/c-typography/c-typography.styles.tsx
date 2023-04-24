@@ -1,5 +1,5 @@
 import { CSSObject, css } from '@emotion/css';
-import { ComputedRef, computed, inject, provide } from 'vue';
+import { ComputedRef, computed, inject, provide, readonly } from 'vue';
 
 const key = 'c-typography.class';
 
@@ -58,7 +58,7 @@ export const useTypographyStyles = () => {
 
   if (!baseClass) {
     baseClass = computed(() => css(styles.value));
-    provide(key, baseClass);
+    provide(key, readonly(baseClass));
   }
 
   return baseClass;

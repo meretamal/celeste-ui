@@ -1,4 +1,4 @@
-import { PropType, defineComponent, provide, computed } from 'vue';
+import { PropType, defineComponent, provide, computed, readonly } from 'vue';
 import merge from 'lodash/merge';
 import { baseTheme } from '@/theme';
 import { useButtonStyles } from '@/components/c-button/c-button.styles';
@@ -16,7 +16,7 @@ export const CThemeProvider = defineComponent({
   },
   setup(props, { slots }) {
     const theme = computed<Theme>(() => merge(baseTheme, props.theme));
-    provide('theme', theme);
+    provide('theme', readonly(theme));
 
     useTypographyStyles();
     useButtonStyles();
