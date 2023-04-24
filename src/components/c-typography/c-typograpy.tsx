@@ -20,6 +20,12 @@ export const CTypography = defineComponent({
       type: String as PropType<'thin' | 'light' | 'regular' | 'bold' | 'black'>,
       default: 'regular',
     },
+    align: {
+      type: String as PropType<
+        'center' | 'inherit' | 'justify' | 'left' | 'right'
+      >,
+      default: 'inherit',
+    },
   },
   setup(props, { slots }) {
     const defaultMapping = {
@@ -41,6 +47,7 @@ export const CTypography = defineComponent({
       baseClass.value,
       `${baseClass.value}--${props.variant}`,
       `${baseClass.value}--${props.fontWeight}`,
+      `${baseClass.value}--${props.align}`,
     ]);
     return () => (
       <celeste.span as={tag.value} class={classes.value}>

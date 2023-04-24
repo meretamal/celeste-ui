@@ -52,6 +52,21 @@ export const useTypographyStyles = () => {
     '&--black': {
       fontWeight: 900,
     },
+    '&--center': {
+      textAlign: 'center',
+    },
+    '&--inherit': {
+      textAlign: 'inherit',
+    },
+    '&--justify': {
+      textAlign: 'justify',
+    },
+    '&--left': {
+      textAlign: 'left',
+    },
+    '&--right': {
+      textAlign: 'right',
+    },
   }));
 
   let baseClass = inject<ComputedRef<string> | undefined>(key, undefined);

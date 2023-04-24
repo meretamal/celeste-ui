@@ -30,6 +30,18 @@ export default {
         defaultValue: { summary: '"regular"' },
       },
     },
+    align: {
+      control: { type: 'select' },
+      options: ['center', 'inherit', 'justify', 'left', 'right'],
+      description: 'Handles the alignment of the text',
+      defaultValue: 'inherit',
+      table: {
+        type: {
+          summary: '"center" | "inherit" | "justify" | "left" | "right"',
+        },
+        defaultValue: { summary: '"inherit"' },
+      },
+    },
   },
 } as Meta<typeof CTypography>;
 
