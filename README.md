@@ -9,9 +9,13 @@ Celeste UI is library with predesigned Vue 3 components still in development. If
 
 <h2>Table of contents</h2>
 <ul>
+  <li><a href="#Documentation">Documentation</a></li>
   <li><a href="#Instalation">Instalation</a></li>
   <li><a href="#Usage">Usage</a></li>
 </ul>
+
+<h3 id="Documentation">Documentation</h3>
+<p>TBD</p>
 
 <h3 id="Instalation">Instalation</h3>
 <p>
