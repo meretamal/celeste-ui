@@ -69,7 +69,7 @@ export const Template: StoryFn<typeof CTextField> = (args) => ({
   setup() {
     return () => (
       <CCssBaseline>
-        <CTextField {...args}>Button</CTextField>
+        <CTextField {...args} />
       </CCssBaseline>
     );
   },
