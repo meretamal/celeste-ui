@@ -25,13 +25,13 @@ First of all, install the necessary packages. This library uses @emotion/css to 
 <h4>NPM</h4>
 
 ```bash
-npm install celetes-ui @emotion/css@^11
+npm install celete-ui @emotion/css@^11
 ```
 
 <h4>Yarn</h4>
 
 ```bash
-yarn add celetes-ui @emotion/css@^11
+yarn add celete-ui @emotion/css@^11
 ```
 
 Finally, install the Lato font. For this you can use Google Web Fonts:
