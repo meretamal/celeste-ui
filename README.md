@@ -4,7 +4,7 @@
 <br />
 
 <p>
-Celeste UI is library with predesigned Vue 3 components still in development. If you want to contribute, please follow the CONTRIBUTING guide.
+Celeste UI is library with predesigned Vue 3 components still in development. If you want to help finish this project, please follow the CONTRIBUTING guide.
 </p>
 
 <h2>Table of contents</h2>
