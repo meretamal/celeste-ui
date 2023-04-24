@@ -55,11 +55,11 @@ export const CButton = defineComponent({
           color: '#fff',
           '&:hover': {
             backgroundColor: `${darken(
-              Math.min(0.1, getLuminance(theme.value.colors[props.color]) / 10),
+              getLuminance(theme.value.colors[props.color]) / 10,
               theme.value.colors[props.color],
             )}`,
             borderColor: `${darken(
-              Math.min(0.1, getLuminance(theme.value.colors[props.color]) / 10),
+              getLuminance(theme.value.colors[props.color]) / 10,
               theme.value.colors[props.color],
             )}`,
           },
