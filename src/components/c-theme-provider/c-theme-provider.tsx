@@ -3,6 +3,7 @@ import merge from 'lodash/merge';
 import { baseTheme } from '../../theme';
 import { useButtonStyles } from '../c-button/c-button.styles';
 import { useTextFieldStyles } from '../c-text-field/c-text-field.styles';
+import { useTypographyStyles } from '../c-typography/c-typography.styles';
 import { Theme, DeepPartial } from '../../types';
 
 export const CThemeProvider = defineComponent({
@@ -17,6 +18,7 @@ export const CThemeProvider = defineComponent({
     const theme = computed<Theme>(() => merge(baseTheme, props.theme));
     provide('theme', theme);
 
+    useTypographyStyles();
     useButtonStyles();
     useTextFieldStyles();
     return () => slots.default?.();
