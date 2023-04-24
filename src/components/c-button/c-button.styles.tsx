@@ -1,6 +1,6 @@
 import { provide, computed, readonly, inject, ComputedRef } from 'vue';
 import { CSSObject, css } from '@emotion/css';
-import { lighten, darken, getLuminance } from 'polished';
+import { mix } from 'polished';
 import { useTheme } from '@/composables';
 
 const key = 'c-button.class';
@@ -55,8 +55,9 @@ export const useButtonStyles = () => {
         [`&--${color}`]: {
           border: `1px solid ${theme.value.colors[color]}`,
           '&:focus': {
-            boxShadow: `0 0 0 3px ${lighten(
-              Math.min(0.3, getLuminance(theme.value.colors[color]) / 2),
+            boxShadow: `0 0 0 3px ${mix(
+              0.5,
+              '#fff',
               theme.value.colors[color],
             )}`,
           },
@@ -64,34 +65,22 @@ export const useButtonStyles = () => {
         [`&--contained&--${color}`]: {
           backgroundColor: theme.value.colors[color],
           '&:hover': {
-            backgroundColor: `${darken(
-              getLuminance(theme.value.colors[color]) / 10,
-              theme.value.colors[color],
-            )}`,
-            borderColor: `${darken(
-              getLuminance(theme.value.colors[color]) / 10,
-              theme.value.colors[color],
-            )}`,
+            backgroundColor: `${mix(0.05, '#000', theme.value.colors[color])}`,
+            borderColor: `${mix(0.05, '#000', theme.value.colors[color])}`,
           },
         },
         [`&--outlined&--${color}`]: {
           border: `1px solid ${theme.value.colors[color]}`,
           color: theme.value.colors[color],
           '&:hover': {
-            backgroundColor: `${lighten(
-              Math.min(0.4, getLuminance(theme.value.colors[color])),
-              theme.value.colors[color],
-            )}`,
+            backgroundColor: `${mix(0.9, '#fff', theme.value.colors[color])}`,
           },
         },
         [`&--text&--${color}`]: {
           border: 'none',
           color: theme.value.colors[color],
           '&:hover': {
-            backgroundColor: `${lighten(
-              Math.min(0.4, getLuminance(theme.value.colors[color])),
-              theme.value.colors[color],
-            )}`,
+            backgroundColor: `${mix(0.9, '#fff', theme.value.colors[color])}`,
           },
           '&:focus': {
             boxShadow: 'none',

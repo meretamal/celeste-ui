@@ -1,6 +1,6 @@
 import { provide, computed, readonly, inject, ComputedRef } from 'vue';
 import { CSSObject, css } from '@emotion/css';
-import { lighten, getLuminance } from 'polished';
+import { lighten, getLuminance, mix } from 'polished';
 import { useTheme } from '@/composables';
 
 const key = 'c-text-field.class';
@@ -30,27 +30,18 @@ export const useTextFieldStyles = () => {
       (prev, color) => ({
         ...prev,
         [`&--${color}:focus`]: {
-          boxShadow: `0 0 0 3px ${lighten(
-            Math.min(0.3, getLuminance(theme.value.colors[color]) / 2),
-            theme.value.colors[color],
-          )}`,
+          boxShadow: `0 0 0 3px ${mix(0.5, '#fff', theme.value.colors[color])}`,
           borderColor: theme.value.colors[color],
         },
       }),
       {},
     ),
     '&--error': {
-      boxShadow: `0 0 0 3px ${lighten(
-        Math.min(0.3, getLuminance(theme.value.colors.danger) / 2),
-        theme.value.colors.danger,
-      )}`,
+      boxShadow: `0 0 0 3px ${mix(0.5, '#fff', theme.value.colors.danger)}`,
       borderColor: theme.value.colors.danger,
       '&:focus': {
         outline: 'none',
-        boxShadow: `0 0 0 3px ${lighten(
-          Math.min(0.3, getLuminance(theme.value.colors.danger) / 2),
-          theme.value.colors.danger,
-        )}`,
+        boxShadow: `0 0 0 3px ${mix(0.5, '#fff', theme.value.colors.danger)}`,
         borderColor: theme.value.colors.danger,
       },
     },
