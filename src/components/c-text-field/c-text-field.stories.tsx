@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from '@storybook/vue3';
 import { CTextField } from './c-text-field';
-import { CCssBaseline } from '../c-css-baseline';
+import { CCSSBaseline } from '../c-css-baseline';
 import { CThemeProvider } from '../c-theme-provider';
 
 export default {
@@ -69,11 +69,11 @@ export const Template: StoryFn<typeof CTextField> = (args) => ({
   components: { CTextField },
   setup() {
     return () => (
-      <CCssBaseline>
+      <CCSSBaseline>
         <CThemeProvider>
           <CTextField {...args} />
         </CThemeProvider>
-      </CCssBaseline>
+      </CCSSBaseline>
     );
   },
 });

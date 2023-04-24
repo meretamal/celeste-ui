@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from '@storybook/vue3';
 import { CButton } from './c-button';
-import { CCssBaseline } from '../c-css-baseline';
+import { CCSSBaseline } from '../c-css-baseline';
 import { CThemeProvider } from '../c-theme-provider';
 
 export default {
@@ -55,11 +55,11 @@ export const Template: StoryFn<typeof CButton> = (args) => ({
   components: { CButton },
   setup() {
     return () => (
-      <CCssBaseline>
+      <CCSSBaseline>
         <CThemeProvider>
           <CButton {...args}>Button</CButton>
         </CThemeProvider>
-      </CCssBaseline>
+      </CCSSBaseline>
     );
   },
 });

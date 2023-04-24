@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from '@storybook/vue3';
 import { CTypography } from './c-typograpy';
-import { CCssBaseline } from '../c-css-baseline';
+import { CCSSBaseline } from '../c-css-baseline';
 
 export default {
   title: 'CTypography',
@@ -25,9 +25,9 @@ export const Template: StoryFn<typeof CTypography> = (args) => ({
   components: { CTypography },
   setup() {
     return () => (
-      <CCssBaseline>
+      <CCSSBaseline>
         <CTypography {...args}>Text</CTypography>
-      </CCssBaseline>
+      </CCSSBaseline>
     );
   },
 });
