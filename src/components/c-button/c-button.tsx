@@ -56,13 +56,6 @@ export const CButton = defineComponent({
           '&:hover': {
             backgroundColor: `${darken(0.1, theme.value.colors[props.color])}`,
           },
-          '&:focus': {
-            outline: 'none',
-            boxShadow: `0 0 0 3px ${lighten(
-              getLuminance(theme.value.colors[props.color]) / 2,
-              theme.value.colors[props.color],
-            )}`,
-          },
         },
         '&--outlined': {
           backgroundColor: 'transparent',
