@@ -25,7 +25,8 @@ export const CButton = defineComponent({
       default: 'contained',
     },
   },
-  setup(props, { slots }) {
+  emits: ['click'],
+  setup(props, { slots, emit }) {
     const theme = useTheme();
 
     const baseClass = computed(() =>
@@ -96,8 +97,13 @@ export const CButton = defineComponent({
         [`${baseClass.value}--full-width`]: props.fullWidth,
       },
     ]);
+
+    const handleClick = () => {
+      emit('click');
+    };
+
     return () => (
-      <celeste.button class={classes.value} type="button">
+      <celeste.button class={classes.value} type="button" onClick={handleClick}>
         {slots.default?.()}
       </celeste.button>
     );
