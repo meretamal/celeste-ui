@@ -2,6 +2,7 @@ import { PropType, defineComponent, provide, computed } from 'vue';
 import merge from 'lodash/merge';
 import { baseTheme } from '../../theme/base';
 import { useButtonStyles } from '../../theme/button';
+import { useTextFieldStyles } from '../../theme/text-field';
 import { Theme, DeepPartial } from '../../types';
 
 export const CThemeProvider = defineComponent({
@@ -17,6 +18,7 @@ export const CThemeProvider = defineComponent({
     provide('theme', theme);
 
     useButtonStyles();
+    useTextFieldStyles();
     return () => slots.default?.();
   },
 });
