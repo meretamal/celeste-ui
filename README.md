@@ -1,4 +1,4 @@
-<p align="center"><img src="./assets/logo.png" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/meretamal/celeste-ui/main/assets/logo.png?token=GHSAT0AAAAAAB6ATE7FGZWUCMUZMJXVFMCMZCGYFKA" /></p>
 
 <h1 align="center">The Vue component library you were wating for</h1>
 <br />
