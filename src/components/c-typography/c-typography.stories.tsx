@@ -26,7 +26,7 @@ export const Template: StoryFn<typeof CTypography> = (args) => ({
   setup() {
     return () => (
       <CCssBaseline>
-        <CTypography {...args}>Button</CTypography>
+        <CTypography {...args}>Text</CTypography>
       </CCssBaseline>
     );
   },
