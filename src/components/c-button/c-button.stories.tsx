@@ -34,8 +34,8 @@ export default {
       description: 'Sets the width to 100%',
       defaultValue: false,
       table: {
-        type: { summary: 'false | true' },
-        defaultValue: { summary: 'true' },
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
       },
     },
     variant: {
