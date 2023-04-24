@@ -36,7 +36,8 @@ export const CTextField = defineComponent({
       default: 'text',
     },
   },
-  setup(props) {
+  emits: ['update:modelValue', 'input', 'change'],
+  setup(props, { emit }) {
     const theme = useTheme();
 
     const baseClass = computed(() =>
@@ -79,6 +80,21 @@ export const CTextField = defineComponent({
         [`${baseClass.value}--error`]: props.error,
       },
     ]);
-    return () => <celeste.input type={props.type} class={classes.value} />;
+
+    const handleInput = (event: Event) => {
+      emit('input', (event.currentTarget as HTMLInputElement)?.value);
+      emit('change', (event.currentTarget as HTMLInputElement)?.value);
+      emit(
+        'update:modelValue',
+        (event.currentTarget as HTMLInputElement)?.value,
+      );
+    };
+    return () => (
+      <celeste.input
+        type={props.type}
+        class={classes.value}
+        onInput={handleInput}
+      />
+    );
   },
 });
