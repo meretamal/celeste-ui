@@ -1,4 +1,6 @@
 import { PropType, computed, defineComponent } from 'vue';
+import { ElementType } from '@polymorphic-factory/vue';
+import { celeste } from '../../celeste';
 
 export const CTypography = defineComponent({
   name: 'CTypography',
@@ -9,8 +11,8 @@ export const CTypography = defineComponent({
       >,
       default: 'b1',
     },
-    component: {
-      type: String,
+    as: {
+      type: String as PropType<ElementType>,
       default: null,
     },
   },
@@ -26,10 +28,10 @@ export const CTypography = defineComponent({
       b2: 'p',
     };
 
-    const Tag = computed(
-      () => props.component || defaultMapping[props.variant],
-    );
+    const tag = computed(() => props.as || defaultMapping[props.variant]);
     // eslint-disable-next-line react/jsx-pascal-case
-    return () => <Tag.value>{slots.default?.()}</Tag.value>;
+    return () => (
+      <celeste.span as={tag.value}>{slots.default?.()}</celeste.span>
+    );
   },
 });
