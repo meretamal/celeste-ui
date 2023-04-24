@@ -42,6 +42,17 @@ export default {
         defaultValue: { summary: '"inherit"' },
       },
     },
+    noWrap: {
+      control: { type: 'boolean' },
+      description: 'Truncate the text using ellipsis',
+      defaultValue: false,
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+        defaultValue: { summary: false },
+      },
+    },
   },
 } as Meta<typeof CTypography>;
 

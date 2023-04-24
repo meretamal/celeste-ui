@@ -67,6 +67,11 @@ export const useTypographyStyles = () => {
     '&--right': {
       textAlign: 'right',
     },
+    '&--no-wrap': {
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+    },
   }));
 
   let baseClass = inject<ComputedRef<string> | undefined>(key, undefined);

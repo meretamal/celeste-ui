@@ -26,6 +26,9 @@ export const CTypography = defineComponent({
       >,
       default: 'inherit',
     },
+    noWrap: {
+      type: Boolean,
+    },
   },
   setup(props, { slots }) {
     const defaultMapping = {
@@ -48,6 +51,9 @@ export const CTypography = defineComponent({
       `${baseClass.value}--${props.variant}`,
       `${baseClass.value}--${props.fontWeight}`,
       `${baseClass.value}--${props.align}`,
+      {
+        [`${baseClass.value}--no-wrap`]: props.noWrap,
+      },
     ]);
     return () => (
       <celeste.span as={tag.value} class={classes.value}>
