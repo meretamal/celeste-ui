@@ -1,5 +1,5 @@
 import { ComputedRef, computed, inject } from 'vue';
-import { baseTheme } from '../theme';
+import { baseTheme } from '../theme/base';
 import { Theme } from '../types';
 
 export const useTheme = () => {

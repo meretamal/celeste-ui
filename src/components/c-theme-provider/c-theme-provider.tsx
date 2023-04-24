@@ -1,6 +1,6 @@
 import { PropType, defineComponent, provide, computed } from 'vue';
 import merge from 'lodash/merge';
-import { baseTheme } from '../../theme';
+import { baseTheme } from '../../theme/base';
 import { Theme, DeepPartial } from '../../types';
 
 export const CThemeProvider = defineComponent({
