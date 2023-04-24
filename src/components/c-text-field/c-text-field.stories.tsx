@@ -14,7 +14,7 @@ export default {
       defaultValue: 'primary',
       table: {
         type: {
-          summary: '"primary" | "sucess" | "info" | "warning" | ""danger"',
+          summary: '"primary" | "sucess" | "info" | "warning" | "danger"',
         },
         defaultValue: { summary: '"primary"' },
       },
@@ -60,6 +60,13 @@ export default {
             '"text" | "email" | "date" | "datetime-local" | "month" | "password" | "tel" | "time" | "url" | "week"',
         },
         defaultValue: { summary: '"text"' },
+      },
+    },
+    helperText: {
+      control: { type: 'text' },
+      description: 'Sets a helper text displayed below the input',
+      table: {
+        type: { summary: 'string' },
       },
     },
   },

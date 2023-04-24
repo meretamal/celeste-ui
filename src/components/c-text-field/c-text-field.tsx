@@ -1,4 +1,4 @@
-import { PropType, computed, defineComponent } from 'vue';
+import { PropType, computed, defineComponent, Fragment } from 'vue';
 import { celeste } from '@/celeste';
 import { useTextFieldStyles } from './c-text-field.styles';
 
@@ -33,6 +33,10 @@ export const CTextField = defineComponent({
       >,
       default: 'text',
     },
+    helperText: {
+      type: String,
+      default: null,
+    },
   },
   emits: ['update:modelValue', 'input', 'change'],
   setup(props, { emit }) {
@@ -55,12 +59,20 @@ export const CTextField = defineComponent({
         (event.currentTarget as HTMLInputElement)?.value,
       );
     };
+
     return () => (
-      <celeste.input
-        type={props.type}
-        class={classes.value}
-        onInput={handleInput}
-      />
+      <celeste.div class={`${baseClass.value}__container`}>
+        <celeste.input
+          type={props.type}
+          class={classes.value}
+          onInput={handleInput}
+        />
+        {props.helperText && (
+          <celeste.span class={`${baseClass.value}__helper-text`}>
+            {props.helperText}
+          </celeste.span>
+        )}
+      </celeste.div>
     );
   },
 });

@@ -54,6 +54,18 @@ export const useTextFieldStyles = () => {
         borderColor: theme.value.colors.danger,
       },
     },
+    '&__container': {
+      width: '100%',
+    },
+    '&__helper-text': {
+      display: 'block',
+      fontSize: '0.75rem',
+      margin: '0.5rem 0 0',
+      color: '#666',
+    },
+    '&--error + &__helper-text': {
+      color: theme.value.colors.danger,
+    },
   }));
 
   let baseClass = inject<ComputedRef<string> | undefined>(key, undefined);
