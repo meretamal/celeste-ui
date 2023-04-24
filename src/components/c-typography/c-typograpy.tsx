@@ -1,6 +1,6 @@
 import { PropType, computed, defineComponent } from 'vue';
 import { ElementType } from '@polymorphic-factory/vue';
-import { celeste } from '../../celeste';
+import { celeste } from '@/celeste';
 import { useTypographyStyles } from './c-typography.styles';
 
 export const CTypography = defineComponent({

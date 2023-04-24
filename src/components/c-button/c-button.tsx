@@ -1,5 +1,5 @@
 import { defineComponent, computed, PropType } from 'vue';
-import { celeste } from '../../celeste';
+import { celeste } from '@/celeste';
 import { useButtonStyles } from './c-button.styles';
 
 export const CButton = defineComponent({

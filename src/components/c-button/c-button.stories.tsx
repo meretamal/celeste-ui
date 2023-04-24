@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/vue3';
+import { CCSSBaseline } from '@/components/c-css-baseline';
+import { CThemeProvider } from '@/components/c-theme-provider';
 import { CButton } from './c-button';
-import { CCSSBaseline } from '../c-css-baseline';
-import { CThemeProvider } from '../c-theme-provider';
 
 export default {
   title: 'CButton',

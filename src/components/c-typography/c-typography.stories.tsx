@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from '@storybook/vue3';
+import { CCSSBaseline } from '@/components/c-css-baseline';
 import { CTypography } from './c-typograpy';
-import { CCSSBaseline } from '../c-css-baseline';
 
 export default {
   title: 'CTypography',

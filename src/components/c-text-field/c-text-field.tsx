@@ -1,5 +1,5 @@
 import { PropType, computed, defineComponent } from 'vue';
-import { celeste } from '../../celeste';
+import { celeste } from '@/celeste';
 import { useTextFieldStyles } from './c-text-field.styles';
 
 export const CTextField = defineComponent({
