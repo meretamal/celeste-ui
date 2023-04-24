@@ -1,6 +1,6 @@
 import { PropType, computed, defineComponent } from 'vue';
 import { css } from '@emotion/css';
-import { lighten } from 'polished';
+import { lighten, getLuminance } from 'polished';
 import { useTheme } from '../../composables';
 import { celeste } from '../../celeste';
 
@@ -51,7 +51,7 @@ export const CTextField = defineComponent({
         '&:focus': {
           outline: 'none',
           boxShadow: `0 0 0 3px ${lighten(
-            0.3,
+            Math.min(0.3, getLuminance(theme.value.colors[props.color]) / 2),
             theme.value.colors[props.color],
           )}`,
           borderColor: theme.value.colors[props.color],
@@ -63,11 +63,17 @@ export const CTextField = defineComponent({
           padding: '1rem 0.875rem',
         },
         '&--error': {
-          boxShadow: `0 0 0 3px ${lighten(0.3, theme.value.colors.danger)}`,
+          boxShadow: `0 0 0 3px ${lighten(
+            Math.min(0.3, getLuminance(theme.value.colors.danger) / 2),
+            theme.value.colors.danger,
+          )}`,
           borderColor: theme.value.colors.danger,
           '&:focus': {
             outline: 'none',
-            boxShadow: `0 0 0 3px ${lighten(0.3, theme.value.colors.danger)}`,
+            boxShadow: `0 0 0 3px ${lighten(
+              Math.min(0.3, getLuminance(theme.value.colors.danger) / 2),
+              theme.value.colors.danger,
+            )}`,
             borderColor: theme.value.colors.danger,
           },
         },
