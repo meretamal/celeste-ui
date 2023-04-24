@@ -2,6 +2,7 @@ import { defineComponent, computed, PropType } from 'vue';
 import { css } from '@emotion/css';
 import { darken, lighten } from 'polished';
 import { useTheme } from '../../composables';
+import { celeste } from '../../celeste';
 
 export const CButton = defineComponent({
   name: 'CButton',
@@ -96,9 +97,9 @@ export const CButton = defineComponent({
       },
     ]);
     return () => (
-      <button class={classes.value} type="button">
+      <celeste.button class={classes.value} type="button">
         {slots.default?.()}
-      </button>
+      </celeste.button>
     );
   },
 });
