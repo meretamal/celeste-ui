@@ -2,6 +2,7 @@ import { PropType, computed, defineComponent } from 'vue';
 import { css } from '@emotion/css';
 import { lighten } from 'polished';
 import { useTheme } from '../../composables';
+import { celeste } from '../../celeste';
 
 export const CTextField = defineComponent({
   name: 'CTextField',
@@ -78,6 +79,6 @@ export const CTextField = defineComponent({
         [`${baseClass.value}--error`]: props.error,
       },
     ]);
-    return () => <input type={props.type} class={classes.value} />;
+    return () => <celeste.input type={props.type} class={classes.value} />;
   },
 });
