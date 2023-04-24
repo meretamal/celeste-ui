@@ -18,6 +18,18 @@ export default {
         defaultValue: { summary: '"b1"' },
       },
     },
+    fontWeight: {
+      control: { type: 'select' },
+      options: ['thin', 'light', 'regular', 'bold', 'black'],
+      description: 'Changes the font weight of the text displayed',
+      defaultValue: 'regular',
+      table: {
+        type: {
+          summary: '"thin" | "light" | "regular" | "bold" | "black"',
+        },
+        defaultValue: { summary: '"regular"' },
+      },
+    },
   },
 } as Meta<typeof CTypography>;
 

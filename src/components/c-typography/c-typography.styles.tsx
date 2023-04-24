@@ -37,6 +37,21 @@ export const useTypographyStyles = () => {
       fontSize: '1rem',
       lineHeight: '1.175rem',
     },
+    '&--thin': {
+      fontWeight: 100,
+    },
+    '&--light': {
+      fontWeight: 300,
+    },
+    '&--regular': {
+      fontWeight: 400,
+    },
+    '&--bold': {
+      fontWeight: 700,
+    },
+    '&--black': {
+      fontWeight: 900,
+    },
   }));
 
   let baseClass = inject<ComputedRef<string> | undefined>(key, undefined);
