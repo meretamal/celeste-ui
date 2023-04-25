@@ -26,6 +26,10 @@ export const CSelect = defineComponent({
       type: String,
       default: null,
     },
+    label: {
+      type: String,
+      default: null,
+    },
   },
   emits: ['update:modelValue', 'input', 'change'],
   setup(props, { emit, slots }) {
@@ -51,6 +55,11 @@ export const CSelect = defineComponent({
 
     return () => (
       <celeste.div class={`${baseClass.value}__container`}>
+        {props.label && (
+          <celeste.label class={`${baseClass.value}__label`}>
+            {props.label}
+          </celeste.label>
+        )}
         <celeste.select class={classes.value} onInput={handleInput}>
           {props.placeholder && (
             <celeste.option value="" disabled>

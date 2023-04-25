@@ -37,6 +37,13 @@ export default {
         defaultValue: { summary: '"medium"' },
       },
     },
+    label: {
+      control: { type: 'text' },
+      description: "Sets the select field's label",
+      table: {
+        type: { summary: 'string' },
+      },
+    },
     helperText: {
       control: { type: 'text' },
       description: 'Sets a helper text displayed below the select field',
