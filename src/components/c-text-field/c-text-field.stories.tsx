@@ -68,6 +68,13 @@ export default {
         type: { summary: 'string' },
       },
     },
+    placeholder: {
+      control: { type: 'text' },
+      description: "Sets the input's placehoder",
+      table: {
+        type: { summary: 'string' },
+      },
+    },
   },
 } as Meta<typeof CTextField>;
 

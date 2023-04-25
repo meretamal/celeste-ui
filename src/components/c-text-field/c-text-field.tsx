@@ -37,6 +37,10 @@ export const CTextField = defineComponent({
       type: String,
       default: null,
     },
+    placeholder: {
+      type: String,
+      default: null,
+    },
   },
   emits: ['update:modelValue', 'input', 'change'],
   setup(props, { emit }) {
@@ -66,6 +70,7 @@ export const CTextField = defineComponent({
           type={props.type}
           class={classes.value}
           onInput={handleInput}
+          placeholder={props.placeholder}
         />
         {props.helperText && (
           <celeste.span class={`${baseClass.value}__helper-text`}>
