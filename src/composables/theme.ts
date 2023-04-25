@@ -4,7 +4,7 @@ import { Theme } from '@/types';
 
 export const useTheme = () => {
   const injectedTheme = inject<ComputedRef<Theme> | undefined>(
-    'theme',
+    'CTheme',
     undefined,
   );
   const theme = computed(() => injectedTheme?.value || baseTheme);
