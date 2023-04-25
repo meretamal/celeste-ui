@@ -62,6 +62,7 @@ export const useCheckboxStyles = () => {
             borderColor: theme.value.colors[color],
           },
           [`&--${color}:focus::before`]: {
+            borderColor: theme.value.colors[color],
             boxShadow: `0 0 0 3px ${mix(
               0.5,
               '#fff',
