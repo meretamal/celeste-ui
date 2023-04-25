@@ -19,7 +19,7 @@ Celeste UI is library with predesigned Vue 3 components still in development. If
 
 <h3 id="Instalation">Instalation</h3>
 <p>
-First of all, install the necessary packages. This library uses @emotion/css to handle the component styles, so it must also bu installed:
+First of all, install the necessary packages. This library uses @emotion/css to handle the component styles, so it must also be installed:
 </p>
 
 <h4>NPM</h4>
