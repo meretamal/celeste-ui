@@ -57,11 +57,11 @@ export const useCheckboxStyles = () => {
       ).reduce(
         (prev, color) => ({
           ...prev,
-          [`&:checked::before`]: {
+          [`&--${color}:checked::before`]: {
             backgroundColor: theme.value.colors[color],
             borderColor: theme.value.colors[color],
           },
-          [`&:focus::before`]: {
+          [`&--${color}:focus::before`]: {
             boxShadow: `0 0 0 3px ${mix(
               0.5,
               '#fff',
