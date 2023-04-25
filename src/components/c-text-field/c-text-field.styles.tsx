@@ -1,6 +1,6 @@
 import { provide, computed, readonly, inject, ComputedRef } from 'vue';
 import { CSSObject, css } from '@emotion/css';
-import { lighten, getLuminance, mix } from 'polished';
+import { mix } from 'polished';
 import { useTheme } from '@/composables';
 
 const key = 'c-text-field.class';
