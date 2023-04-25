@@ -44,6 +44,13 @@ export default {
         type: { summary: 'string' },
       },
     },
+    placeholder: {
+      control: { type: 'text' },
+      description: "Sets the select's placeholder",
+      table: {
+        type: { summary: 'string' },
+      },
+    },
   },
 } as Meta<typeof CSelect>;
 
