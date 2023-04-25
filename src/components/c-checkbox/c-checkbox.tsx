@@ -18,28 +18,34 @@ export const CCheckbox = defineComponent({
     value: {
       default: undefined,
     },
+    label: {
+      type: String,
+      default: null,
+    },
   },
   emits: ['update:modelValue'],
   setup(props, { emit }) {
     const baseClass = useCheckboxStyles();
-    const inputClasses = computed(() => [
-      `${baseClass.value}__input`,
-      `${baseClass.value}__input--${props.color}`,
-      `${baseClass.value}__input--${props.size}`,
+    const containerClasses = computed(() => [
+      baseClass.value,
+      `${baseClass.value}--${props.color}`,
+      `${baseClass.value}--${props.size}`,
     ]);
+    const inputClasses = computed(() => [`${baseClass.value}__input`]);
 
     const handleInput = () => {
       emit('update:modelValue', props.value);
     };
 
     return () => (
-      <celeste.div class={baseClass.value}>
+      <celeste.div class={containerClasses.value}>
         <input
           class={inputClasses.value}
           type="checkbox"
           value={props.value}
           onInput={handleInput}
         />
+        {props.label && <celeste.label>{props.label}</celeste.label>}
       </celeste.div>
     );
   },

@@ -28,6 +28,13 @@ export default {
         defaultValue: { summary: '"medium"' },
       },
     },
+    label: {
+      control: { type: 'text' },
+      description: 'Sets the checkbox label',
+      table: {
+        type: { summary: 'string' },
+      },
+    },
   },
 } as Meta<typeof CCheckbox>;
 
