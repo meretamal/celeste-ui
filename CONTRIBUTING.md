@@ -14,7 +14,7 @@ The following steps will get you up and running to contribute to Celeste UI:
 2. Clone your fork locally
 
 ```sh
-git clone git@github.com:meretamal/celeste-ui.git
+git clone git@github.com:<your-username>/celeste-ui.git
 cd celeste-ui
 ```
 
@@ -41,7 +41,7 @@ end with `.stories.tsx`.
 
 **`yarn lint`**: check for eslint offences.
 
-**`yarn lint:fix`**: check amd fix eslint offences.
+**`yarn lint:fix`**: check and fix eslint offences.
 
 ## Think you found a bug?
 
