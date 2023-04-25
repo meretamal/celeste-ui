@@ -25,8 +25,9 @@ export const useCheckboxStyles = () => {
       width: 0,
       cursor: 'pointer',
       '&::before': {
+        boxSizing: 'border-box',
         content: '""',
-        border: '1px solid #ccc',
+        border: '2px solid #ccc',
         position: 'absolute',
         transition: 'all 0.1s ease-in-out',
         height: '100%',
