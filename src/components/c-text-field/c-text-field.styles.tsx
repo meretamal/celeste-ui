@@ -48,6 +48,13 @@ export const useTextFieldStyles = () => {
     '&__container': {
       width: '100%',
     },
+    '&__label': {
+      display: 'block',
+      marginBottom: '0.5rem',
+      fontSize: '1rem',
+      fontWeight: 'bold',
+      color: '#333',
+    },
     '&__helper-text': {
       display: 'block',
       fontSize: '0.75rem',

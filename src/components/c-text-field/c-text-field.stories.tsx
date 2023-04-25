@@ -61,6 +61,13 @@ export default {
         defaultValue: { summary: '"text"' },
       },
     },
+    label: {
+      control: { type: 'text' },
+      description: "Sets the input's label",
+      table: {
+        type: { summary: 'string' },
+      },
+    },
     helperText: {
       control: { type: 'text' },
       description: 'Sets a helper text displayed below the input',
