@@ -64,7 +64,7 @@ Finally, install the Lato font. For this you can use Google Web Fonts:
   </CThemeProvider>
 </template>
 <script setup lang="ts">
-import { CThemeProvider } from 'celeleste-ui';
+import { CThemeProvider } from 'celeste-ui';
 </script>
 ```
 
@@ -74,6 +74,6 @@ import { CThemeProvider } from 'celeleste-ui';
   <CButton>Click me!</CButton>
 </template>
 <script setup lang="ts">
-import { CButton } from 'celeleste-ui';
+import { CButton } from 'celeste-ui';
 </script>
 ```
