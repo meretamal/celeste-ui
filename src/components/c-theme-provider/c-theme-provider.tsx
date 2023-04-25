@@ -14,7 +14,7 @@ export const CThemeProvider = defineComponent({
   },
   setup(props, { slots }) {
     const theme = computed<Theme>(() => merge(baseTheme, props.theme));
-    provide('theme', theme);
+    provide('CTheme', theme);
     return () => <CCSSBaseline>{slots.default?.()}</CCSSBaseline>;
   },
 });

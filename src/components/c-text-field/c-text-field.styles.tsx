@@ -3,7 +3,7 @@ import { CSSObject, css } from '@emotion/css';
 import { mix } from 'polished';
 import { useTheme } from '@/composables';
 
-const key = 'c-text-field.class';
+const key = 'CTextFieldClass';
 
 export const useTextFieldStyles = () => {
   const theme = useTheme();

@@ -3,7 +3,7 @@ import { CSSObject, css } from '@emotion/css';
 import { mix } from 'polished';
 import { useTheme } from '@/composables';
 
-const key = 'c-button.class';
+const key = 'CButtonClass';
 
 export const useButtonStyles = () => {
   const theme = useTheme();

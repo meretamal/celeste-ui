@@ -1,7 +1,7 @@
 import { CSSObject, css } from '@emotion/css';
 import { ComputedRef, computed, inject, provide, readonly } from 'vue';
 
-const key = 'c-typography.class';
+const key = 'CTypograhyClass';
 
 export const useTypographyStyles = () => {
   const styles = computed<CSSObject>(() => ({
