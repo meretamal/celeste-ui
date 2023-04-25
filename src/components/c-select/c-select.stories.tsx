@@ -9,7 +9,7 @@ export default {
     color: {
       control: { type: 'select' },
       options: ['primary', 'success', 'info', 'warning', 'danger'],
-      description: 'Changes the color of the text field',
+      description: 'Changes the color of the select field',
       defaultValue: 'primary',
       table: {
         type: {
@@ -30,7 +30,7 @@ export default {
     size: {
       control: { type: 'select' },
       options: ['medium', 'large'],
-      description: 'Changes the size of the text field',
+      description: 'Changes the size of the select field',
       defaultValue: 'medium',
       table: {
         type: { summary: '"medium" | "large"' },
@@ -39,7 +39,7 @@ export default {
     },
     helperText: {
       control: { type: 'text' },
-      description: 'Sets a helper text displayed below the input',
+      description: 'Sets a helper text displayed below the select field',
       table: {
         type: { summary: 'string' },
       },
