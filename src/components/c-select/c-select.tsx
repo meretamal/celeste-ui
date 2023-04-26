@@ -5,6 +5,10 @@ import { useSelectStyles } from './c-select.styles';
 export const CSelect = defineComponent({
   name: 'CSelect',
   props: {
+    modelValue: {
+      type: [String, Number],
+      default: undefined,
+    },
     color: {
       type: String as PropType<
         'primary' | 'success' | 'info' | 'warning' | 'danger'
@@ -67,6 +71,7 @@ export const CSelect = defineComponent({
           disabled={props.disabled}
           class={classes.value}
           onInput={handleInput}
+          value={props.modelValue}
         >
           {props.placeholder && (
             <celeste.option value="" disabled>
