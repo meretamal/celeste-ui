@@ -5,6 +5,10 @@ import { useTextFieldStyles } from './c-text-field.styles';
 export const CTextField = defineComponent({
   name: 'CTextField',
   props: {
+    modelValue: {
+      type: [String, Number],
+      default: undefined,
+    },
     color: {
       type: String as PropType<
         'primary' | 'success' | 'info' | 'warning' | 'danger'
@@ -84,6 +88,7 @@ export const CTextField = defineComponent({
           class={`${baseClass.value}__input`}
           onInput={handleInput}
           placeholder={props.placeholder}
+          value={props.modelValue}
         />
         {props.helperText && (
           <celeste.span class={`${baseClass.value}__helper-text`}>
