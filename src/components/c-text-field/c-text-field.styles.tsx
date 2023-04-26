@@ -12,7 +12,7 @@ export const useTextFieldStyles = () => {
     display: 'block',
     width: '100%',
     fontSize: '1rem',
-    border: '2px solid bdbdbd',
+    border: '2px solid #bdbdbd',
     color: '#212121',
     borderRadius: '4px',
     transition: 'all 0.3s ease-in-out',
