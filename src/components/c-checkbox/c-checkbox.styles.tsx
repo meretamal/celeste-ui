@@ -27,7 +27,7 @@ export const useCheckboxStyles = () => {
       '&::before': {
         boxSizing: 'border-box',
         content: '""',
-        border: '2px solid #ccc',
+        border: '2px solid #bdbdbd',
         position: 'absolute',
         transition: 'all 0.1s ease-in-out',
         height: '100%',
@@ -86,6 +86,11 @@ export const useCheckboxStyles = () => {
       }),
       {},
     ),
+    '&__label': {
+      display: 'block',
+      fontSize: '1rem',
+      color: '#212121',
+    },
   }));
 
   let baseClass = inject<ComputedRef<string> | undefined>(key, undefined);

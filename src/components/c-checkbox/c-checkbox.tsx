@@ -45,7 +45,11 @@ export const CCheckbox = defineComponent({
           value={props.value}
           onInput={handleInput}
         />
-        {props.label && <celeste.label>{props.label}</celeste.label>}
+        {props.label && (
+          <celeste.label class={`${baseClass.value}__label`}>
+            {props.label}
+          </celeste.label>
+        )}
       </celeste.div>
     );
   },

@@ -5,6 +5,7 @@ const key = 'CTypograhyClass';
 
 export const useTypographyStyles = () => {
   const styles = computed<CSSObject>(() => ({
+    color: '#212121',
     '&--h1': {
       fontSize: '3rem',
       lineHeight: '3.5rem',
