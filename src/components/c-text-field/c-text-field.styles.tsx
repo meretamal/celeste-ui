@@ -28,6 +28,9 @@ export const useTextFieldStyles = () => {
     '&::placeholder': {
       color: '#bdbdbd',
     },
+    '&:disabled, &[disabled]': {
+      cursor: 'not-allowed',
+    },
     ...(
       Object.keys(theme.value.colors) as (keyof typeof theme.value.colors)[]
     ).reduce(

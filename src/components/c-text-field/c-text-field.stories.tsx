@@ -27,6 +27,15 @@ export default {
         defaultValue: { summary: 'true' },
       },
     },
+    disabled: {
+      control: { type: 'boolean' },
+      description: 'Sets the disabled property of the input',
+      defaultValue: false,
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
     size: {
       control: { type: 'select' },
       options: ['medium', 'large'],

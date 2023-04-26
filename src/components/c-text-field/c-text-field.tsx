@@ -45,6 +45,9 @@ export const CTextField = defineComponent({
       type: String,
       default: null,
     },
+    disabled: {
+      type: Boolean,
+    },
   },
   emits: ['update:modelValue', 'input', 'change'],
   setup(props, { emit }) {
@@ -76,6 +79,7 @@ export const CTextField = defineComponent({
           </celeste.label>
         )}
         <celeste.input
+          disabled={props.disabled}
           type={props.type}
           class={classes.value}
           onInput={handleInput}
