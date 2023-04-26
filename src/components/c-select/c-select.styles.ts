@@ -33,6 +33,9 @@ export const useSelectStyles = () => {
     '&--large': {
       padding: '1rem 0.875rem',
     },
+    '&:disabled, &[disabled]': {
+      cursor: 'not-allowed',
+    },
     ...(
       Object.keys(theme.value.colors) as (keyof typeof theme.value.colors)[]
     ).reduce(
