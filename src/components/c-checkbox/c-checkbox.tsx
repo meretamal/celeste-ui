@@ -22,6 +22,9 @@ export const CCheckbox = defineComponent({
       type: String,
       default: null,
     },
+    disabled: {
+      type: Boolean,
+    },
   },
   emits: ['update:modelValue'],
   setup(props, { emit }) {
@@ -44,6 +47,7 @@ export const CCheckbox = defineComponent({
           type="checkbox"
           value={props.value}
           onInput={handleInput}
+          disabled={props.disabled}
         />
         {props.label && (
           <celeste.label class={`${baseClass.value}__label`}>

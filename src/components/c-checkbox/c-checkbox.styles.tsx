@@ -42,6 +42,9 @@ export const useCheckboxStyles = () => {
       '&:checked::after': {
         visibility: 'visible',
       },
+      '&:disabled, &[disabled]': {
+        cursor: 'not-allowed',
+      },
     },
     '&--small &__input': {
       height: '0.75rem',

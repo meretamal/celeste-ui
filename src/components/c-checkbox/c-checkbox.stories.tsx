@@ -18,6 +18,15 @@ export default {
         defaultValue: { summary: '"primary"' },
       },
     },
+    disabled: {
+      control: { type: 'boolean' },
+      description: 'Sets the disabled property of the checkbox',
+      defaultValue: false,
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
     size: {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
