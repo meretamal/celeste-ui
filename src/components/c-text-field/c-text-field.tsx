@@ -72,7 +72,7 @@ export const CTextField = defineComponent({
     };
 
     return () => (
-      <celeste.div class={`${baseClass.value}__container`}>
+      <celeste.div class={classes.value}>
         {props.label && (
           <celeste.label class={`${baseClass.value}__label`}>
             {props.label}
@@ -81,7 +81,7 @@ export const CTextField = defineComponent({
         <celeste.input
           disabled={props.disabled}
           type={props.type}
-          class={classes.value}
+          class={`${baseClass.value}__input`}
           onInput={handleInput}
           placeholder={props.placeholder}
         />

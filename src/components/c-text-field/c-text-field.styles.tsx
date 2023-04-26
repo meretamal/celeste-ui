@@ -11,39 +11,42 @@ export const useTextFieldStyles = () => {
   const styles = computed<CSSObject>(() => ({
     display: 'block',
     width: '100%',
-    fontSize: '1rem',
-    border: '2px solid #bdbdbd',
-    color: '#212121',
-    borderRadius: '4px',
-    transition: 'all 0.3s ease-in-out',
-    '&:focus': {
-      outline: 'none',
+    '&__input': {
+      width: '100%',
+      fontSize: '1rem',
+      border: '2px solid #bdbdbd',
+      color: '#212121',
+      borderRadius: '4px',
+      transition: 'all 0.3s ease-in-out',
+      '&:focus': {
+        outline: 'none',
+      },
+      '&::placeholder': {
+        color: '#bdbdbd',
+      },
+      '&:disabled, &[disabled]': {
+        cursor: 'not-allowed',
+      },
     },
-    '&--medium': {
+    '&--medium &__input': {
       padding: '0.5625rem 0.875rem',
     },
-    '&--large': {
+    '&--large &__input': {
       padding: '1rem 0.875rem',
-    },
-    '&::placeholder': {
-      color: '#bdbdbd',
-    },
-    '&:disabled, &[disabled]': {
-      cursor: 'not-allowed',
     },
     ...(
       Object.keys(theme.value.colors) as (keyof typeof theme.value.colors)[]
     ).reduce(
       (prev, color) => ({
         ...prev,
-        [`&--${color}:focus`]: {
+        [`&--${color} &__input:focus`]: {
           boxShadow: `0 0 0 3px ${mix(0.5, '#fff', theme.value.colors[color])}`,
           borderColor: theme.value.colors[color],
         },
       }),
       {},
     ),
-    '&--error': {
+    '&--error &__input': {
       boxShadow: `0 0 0 3px ${mix(0.5, '#fff', theme.value.colors.danger)}`,
       borderColor: theme.value.colors.danger,
       '&:focus': {
@@ -51,9 +54,6 @@ export const useTextFieldStyles = () => {
         boxShadow: `0 0 0 3px ${mix(0.5, '#fff', theme.value.colors.danger)}`,
         borderColor: theme.value.colors.danger,
       },
-    },
-    '&__container': {
-      width: '100%',
     },
     '&__label': {
       display: 'block',
@@ -68,7 +68,7 @@ export const useTextFieldStyles = () => {
       margin: '0.5rem 0 0',
       color: '#212121',
     },
-    '&--error + &__helper-text': {
+    '&--error &__helper-text': {
       color: theme.value.colors.danger,
     },
   }));
