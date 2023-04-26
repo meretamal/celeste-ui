@@ -25,6 +25,9 @@ export const useTextFieldStyles = () => {
     '&--large': {
       padding: '1rem 0.875rem',
     },
+    '&::placeholder': {
+      color: '#bdbdbd',
+    },
     ...(
       Object.keys(theme.value.colors) as (keyof typeof theme.value.colors)[]
     ).reduce(
