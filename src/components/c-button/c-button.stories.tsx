@@ -47,6 +47,15 @@ export default {
         defaultValue: { summary: '"contained"' },
       },
     },
+    disabled: {
+      control: { type: 'boolean' },
+      description: 'Sets the disabled property of the button',
+      defaultValue: false,
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
   },
 } as Meta<typeof CButton>;
 

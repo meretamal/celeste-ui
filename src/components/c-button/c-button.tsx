@@ -22,6 +22,9 @@ export const CButton = defineComponent({
       type: String as PropType<'contained' | 'outlined' | 'text'>,
       default: 'contained',
     },
+    disabled: {
+      type: Boolean,
+    },
   },
   emits: ['click'],
   setup(props, { slots, emit }) {
@@ -42,7 +45,12 @@ export const CButton = defineComponent({
     };
 
     return () => (
-      <celeste.button class={classes.value} type="button" onClick={handleClick}>
+      <celeste.button
+        disabled={props.disabled}
+        class={classes.value}
+        type="button"
+        onClick={handleClick}
+      >
         {slots.default?.()}
       </celeste.button>
     );
