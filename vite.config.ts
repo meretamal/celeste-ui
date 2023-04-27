@@ -15,12 +15,7 @@ export default defineConfig({
       fileName: (format, entryName) => `${entryName}.${format}.js`,
     },
     rollupOptions: {
-      external: ['vue'],
-      output: {
-        globals: {
-          vue: 'Vue',
-        },
-      },
+      external: ['vue', '@emotion/css'],
     },
     sourcemap: true,
   },
