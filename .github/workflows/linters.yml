@@ -1,4 +1,4 @@
-name: build
+name: linters
 
 on:
   pull_request:
@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  build:
-    name: build
+  eslint:
+    name: eslint
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
@@ -29,5 +29,5 @@ jobs:
         if: steps.node-modules-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
-      - name: Run build
-        run: yarn build
+      - name: Run eslint
+        run: yarn lint
