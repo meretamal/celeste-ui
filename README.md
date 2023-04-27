@@ -1,6 +1,6 @@
 <p align="center"><img src="./assets/logo.png" /></p>
 
-<h1 align="center">The Vue component library you were wating for</h1>
+<h1 align="center">The Vue component library you were waiting for</h1>
 <br />
 
 <p>
@@ -10,31 +10,31 @@ Celeste UI is a library with predesigned Vue 3 components still in development. 
 <h2>Table of contents</h2>
 <ul>
   <li><a href="#Documentation">Documentation</a></li>
-  <li><a href="#Instalation">Instalation</a></li>
+  <li><a href="#Installation">Installation</a></li>
   <li><a href="#Usage">Usage</a></li>
 </ul>
 
 <h3 id="Documentation">Documentation</h3>
 <p>TBD</p>
 
-<h3 id="Instalation">Instalation</h3>
+<h3 id="Installation">Installation</h3>
 <p>
-First of all, install the necessary packages. This library uses <a href="https://emotion.sh/docs/@emotion/css">@emotion/css</a> to handle the component styles, so it must also be installed:
+First, install the necessary packages. This library uses <a href="https://emotion.sh/docs/@emotion/css">@emotion/css</a> to handle the component styles, so it must also be installed:
 </p>
 
 <h4>NPM</h4>
 
 ```bash
-npm install celeste-ui @emotion/css@^11
+npm install celeste-ui @emotion/css
 ```
 
 <h4>Yarn</h4>
 
 ```bash
-yarn add celeste-ui @emotion/css@^11
+yarn add celeste-ui @emotion/css
 ```
 
-Finally, install the Lato font. For this you can use Google Web Fonts:
+Finally, install the Lato font. For this, you can use Google Web Fonts:
 
 <h4>link</h4>
 
