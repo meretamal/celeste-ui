@@ -23,7 +23,10 @@
     "lint": "eslint --ext .ts,.tsx src",
     "lint:fix": "eslint --ext .ts,.tsx --fix src",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
@@ -40,6 +43,7 @@
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "@vitest/coverage-c8": "^0.30.1",
     "@vue/eslint-config-airbnb-with-typescript": "^7.0.0",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.8.0",
