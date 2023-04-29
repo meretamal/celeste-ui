@@ -37,6 +37,10 @@ export const CSelect = defineComponent({
     disabled: {
       type: Boolean,
     },
+    id: {
+      type: String,
+      default: null,
+    },
   },
   emits: ['update:modelValue', 'input', 'change'],
   setup(props, { emit, slots }) {
@@ -63,7 +67,7 @@ export const CSelect = defineComponent({
     return () => (
       <celeste.div class={`${baseClass.value}__container`}>
         {props.label && (
-          <celeste.label class={`${baseClass.value}__label`}>
+          <celeste.label class={`${baseClass.value}__label`} for={props.id}>
             {props.label}
           </celeste.label>
         )}
@@ -72,6 +76,7 @@ export const CSelect = defineComponent({
           class={classes.value}
           onInput={handleInput}
           value={props.modelValue}
+          id={props.id}
         >
           {props.placeholder && (
             <celeste.option value="" disabled>
