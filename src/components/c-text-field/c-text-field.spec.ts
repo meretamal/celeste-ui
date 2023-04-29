@@ -1,3 +1,5 @@
+import '@testing-library/jest-dom';
+
 import { render, screen, RenderOptions } from '@testing-library/vue';
 import { describe, it, expect } from 'vitest';
 import { CTextField } from './c-text-field';
@@ -29,6 +31,7 @@ describe('CTextField', () => {
 
   it('should disable the input', () => {
     renderComponent({ label: 'Name', id: 'name', disabled: true });
-    screen.getByLabelText('Name');
+    const input = screen.getByLabelText('Name');
+    expect(input).toBeDisabled();
   });
 });
