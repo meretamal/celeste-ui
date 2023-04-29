@@ -1,4 +1,4 @@
-import { defineComponent, computed, PropType, ref } from 'vue';
+import { defineComponent, computed, PropType } from 'vue';
 import { celeste } from '@/celeste';
 import { useButtonStyles } from './c-button.styles';
 
