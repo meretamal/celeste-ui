@@ -17,7 +17,7 @@ export const useButtonStyles = () => {
     textAlign: 'center',
     textDecoration: 'none',
     lineHeight: '1.75',
-    '&:active:not(&:disabled, &[disabled])': {
+    '&:active:not(&:disabled)': {
       transform: 'translateY(2px)',
     },
     '&:focus': {
@@ -47,7 +47,7 @@ export const useButtonStyles = () => {
     '&--text': {
       backgroundColor: 'transparent',
     },
-    '&:disabled, &[disabled]': {
+    '&:disabled': {
       cursor: 'not-allowed',
     },
     ...(
@@ -67,7 +67,7 @@ export const useButtonStyles = () => {
         },
         [`&--contained&--${color}`]: {
           backgroundColor: theme.value.colors[color],
-          '&:hover:not(&:disabled, &[disabled])': {
+          '&:hover:not(&:disabled)': {
             backgroundColor: `${mix(0.05, '#000', theme.value.colors[color])}`,
             borderColor: `${mix(0.05, '#000', theme.value.colors[color])}`,
           },
@@ -75,14 +75,14 @@ export const useButtonStyles = () => {
         [`&--outlined&--${color}`]: {
           border: `1px solid ${theme.value.colors[color]}`,
           color: theme.value.colors[color],
-          '&:hover:not(&:disabled, &[disabled])': {
+          '&:hover:not(&:disabled)': {
             backgroundColor: `${mix(0.9, '#fff', theme.value.colors[color])}`,
           },
         },
         [`&--text&--${color}`]: {
           border: 'none',
           color: theme.value.colors[color],
-          '&:hover:not(&:disabled, &[disabled])': {
+          '&:hover:not(&:disabled)': {
             backgroundColor: `${mix(0.9, '#fff', theme.value.colors[color])}`,
           },
           '&:focus': {
