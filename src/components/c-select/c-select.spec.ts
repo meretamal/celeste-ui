@@ -1,3 +1,5 @@
+import '@testing-library/jest-dom';
+
 import { render, screen, RenderOptions } from '@testing-library/vue';
 import { describe, it, expect } from 'vitest';
 import { CSelect } from './c-select';
@@ -32,6 +34,7 @@ describe('CSelect', () => {
 
   it('should disable the select field', () => {
     renderComponent({ label: 'Name', id: 'name', disabled: true });
-    screen.getByLabelText('Name');
+    const select = screen.getByLabelText('Name');
+    expect(select).toBeDisabled();
   });
 });
