@@ -1,4 +1,4 @@
-import { defineComponent, computed, PropType } from 'vue';
+import { defineComponent, computed, PropType, ref } from 'vue';
 import { celeste } from '@/celeste';
 import { useButtonStyles } from './c-button.styles';
 
@@ -40,7 +40,8 @@ export const CButton = defineComponent({
       },
     ]);
 
-    const handleClick = () => {
+    const handleClick = (event: Event) => {
+      (event.currentTarget as HTMLButtonElement)?.focus();
       emit('click');
     };
 
