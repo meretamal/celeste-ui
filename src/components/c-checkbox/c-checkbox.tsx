@@ -34,7 +34,7 @@ export const CCheckbox = defineComponent({
       type: Boolean,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ['update:modelValue', 'input', 'change'],
   setup(props, { emit }) {
     const isChecked = computed(
       () =>
@@ -74,6 +74,8 @@ export const CCheckbox = defineComponent({
           (event.currentTarget as HTMLInputElement)?.checked,
         );
       }
+      emit('input', (event.currentTarget as HTMLInputElement)?.checked);
+      emit('change', (event.currentTarget as HTMLInputElement)?.checked);
     };
 
     return () => (
