@@ -65,7 +65,7 @@ export const CSelect = defineComponent({
     };
 
     return () => (
-      <celeste.div class={`${baseClass.value}__container`}>
+      <celeste.div class={classes.value}>
         {props.label && (
           <celeste.label class={`${baseClass.value}__label`} for={props.id}>
             {props.label}
@@ -73,7 +73,7 @@ export const CSelect = defineComponent({
         )}
         <celeste.select
           disabled={props.disabled}
-          class={classes.value}
+          class={`${baseClass.value}__input`}
           onInput={handleInput}
           value={props.modelValue}
           id={props.id}
