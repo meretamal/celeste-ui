@@ -15,3 +15,7 @@
 ## Fixes 🐛
 
 - Include here what was fixed with this version.
+
+## Engineering 💻
+
+- Include here what was added or changed, related to developer experience, testing, etc.
