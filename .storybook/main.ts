@@ -1,5 +1,9 @@
 import type { StorybookViteConfig } from '@storybook/builder-vite';
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
 import { mergeConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import vueJsx from '@vitejs/plugin-vue-jsx';
 
 const config: StorybookViteConfig = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -13,8 +17,13 @@ const config: StorybookViteConfig = {
     builder: '@storybook/builder-vite',
   },
   async viteFinal(config, _options) {
-    const viteConfig = await import('../vite.config');
-    return mergeConfig(config, viteConfig.default);
+    const viteConfig = defineConfig({
+      resolve: {
+        alias: [{ find: '@', replacement: resolve(__dirname, '/src') }],
+      },
+      plugins: [vue(), vueJsx()],
+    });
+    return mergeConfig(config, viteConfig);
   },
   features: {
     storyStoreV7: true,

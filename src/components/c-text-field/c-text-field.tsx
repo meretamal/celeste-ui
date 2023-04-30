@@ -52,6 +52,10 @@ export const CTextField = defineComponent({
     disabled: {
       type: Boolean,
     },
+    id: {
+      type: String,
+      default: null,
+    },
   },
   emits: ['update:modelValue', 'input', 'change'],
   setup(props, { emit }) {
@@ -78,7 +82,7 @@ export const CTextField = defineComponent({
     return () => (
       <celeste.div class={classes.value}>
         {props.label && (
-          <celeste.label class={`${baseClass.value}__label`}>
+          <celeste.label class={`${baseClass.value}__label`} for={props.id}>
             {props.label}
           </celeste.label>
         )}
@@ -89,6 +93,7 @@ export const CTextField = defineComponent({
           onInput={handleInput}
           placeholder={props.placeholder}
           value={props.modelValue}
+          id={props.id}
         />
         {props.helperText && (
           <celeste.span class={`${baseClass.value}__helper-text`}>

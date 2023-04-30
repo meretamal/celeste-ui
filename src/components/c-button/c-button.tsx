@@ -40,7 +40,8 @@ export const CButton = defineComponent({
       },
     ]);
 
-    const handleClick = () => {
+    const handleClick = (event: Event) => {
+      (event.currentTarget as HTMLButtonElement)?.focus();
       emit('click');
     };
 

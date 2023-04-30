@@ -15,7 +15,7 @@ Celeste UI is a library with predesigned Vue 3 components still in development. 
 </ul>
 
 <h3 id="Documentation">Documentation</h3>
-<p>TBD</p>
+<p>A documentation is still being developed. For now, you can check out the deployed storybook build <a href="https://delicate-rolypoly-ac40db.netlify.app/">here</a>.</p>
 
 <h3 id="Installation">Installation</h3>
 <p>

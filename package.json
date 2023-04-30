@@ -1,7 +1,7 @@
 {
   "name": "celeste-ui",
   "private": false,
-  "version": "0.2.1",
+  "version": "0.2.2",
   "type": "module",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
@@ -39,6 +39,7 @@
     "@storybook/builder-vite": "^0.4.2",
     "@storybook/testing-library": "^0.0.13",
     "@storybook/vue3": "^6.5.16",
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/vue": "^7.0.0",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@vitejs/plugin-vue": "^4.1.0",
