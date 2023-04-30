@@ -30,13 +30,18 @@ export const CCheckbox = defineComponent({
     disabled: {
       type: Boolean,
     },
+    defaultChecked: {
+      type: Boolean,
+    },
   },
   emits: ['update:modelValue'],
   setup(props, { emit }) {
-    const isChecked = computed(() =>
-      Array.isArray(props.modelValue)
-        ? props.modelValue.includes(props.value)
-        : props.modelValue,
+    const isChecked = computed(
+      () =>
+        props.defaultChecked ||
+        (Array.isArray(props.modelValue)
+          ? props.modelValue.includes(props.value)
+          : props.modelValue),
     );
     const baseClass = useCheckboxStyles();
     const containerClasses = computed(() => [
