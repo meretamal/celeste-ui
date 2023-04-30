@@ -17,7 +17,9 @@ export const useSelectStyles = () => {
       border: '2px solid #bdbdbd',
       color: '#212121',
       borderRadius: '4px',
-      transition: 'all 0.3s ease-in-out',
+      transitionProperty: 'box-shadow, border-color',
+      transitionDuration: '0.3s',
+      transitionTimingFunction: 'ease-in-out',
       MozAppearance: 'none',
       WebkitAppearance: 'none',
       appearance: 'none',
@@ -31,6 +33,12 @@ export const useSelectStyles = () => {
       },
       '&:disabled': {
         cursor: 'not-allowed',
+      },
+      '&:has(&__placeholder:checked)': {
+        color: '#bdbdbd',
+      },
+      '&__placeholder': {
+        display: 'none',
       },
     },
     '&--medium &__input': {

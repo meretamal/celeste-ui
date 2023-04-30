@@ -1,4 +1,4 @@
-import { defineComponent, PropType, computed } from 'vue';
+import { defineComponent, PropType, computed, ref } from 'vue';
 import { celeste } from '@/celeste';
 import { useSelectStyles } from './c-select.styles';
 
@@ -79,7 +79,12 @@ export const CSelect = defineComponent({
           id={props.id}
         >
           {props.placeholder && (
-            <celeste.option value="" disabled>
+            <celeste.option
+              value=""
+              disabled
+              selected
+              class={`${baseClass.value}__input__placeholder`}
+            >
               {props.placeholder}
             </celeste.option>
           )}
