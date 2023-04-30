@@ -1,4 +1,4 @@
-import { defineComponent, PropType, computed, ref } from 'vue';
+import { defineComponent, PropType, computed } from 'vue';
 import { celeste } from '@/celeste';
 import { useSelectStyles } from './c-select.styles';
 
