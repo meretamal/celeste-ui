@@ -33,6 +33,10 @@ export const CCheckbox = defineComponent({
     defaultChecked: {
       type: Boolean,
     },
+    id: {
+      type: String,
+      default: undefined,
+    },
   },
   emits: ['update:modelValue', 'input', 'change'],
   setup(props, { emit }) {
@@ -86,9 +90,10 @@ export const CCheckbox = defineComponent({
           checked={isChecked.value}
           onInput={handleInput}
           disabled={props.disabled}
+          id={props.id}
         />
         {props.label && (
-          <celeste.label class={`${baseClass.value}__label`}>
+          <celeste.label class={`${baseClass.value}__label`} for={props.id}>
             {props.label}
           </celeste.label>
         )}
