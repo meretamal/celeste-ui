@@ -7,8 +7,8 @@ import { CSelect } from './c-select';
 describe('CSelect', () => {
   it('should render the component correctly', () => {
     const container = render(<CSelect />);
-    const selects = container.baseElement.getElementsByTagName('select');
-    expect(selects.length).toBe(1);
+    const select = container.baseElement.querySelector('select');
+    expect(select).toBeInTheDocument();
   });
 
   it('should display the given label', () => {
