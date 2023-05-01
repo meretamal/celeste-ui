@@ -1,7 +1,7 @@
 import { provide, computed, readonly, inject, ComputedRef } from 'vue';
 import { CSSObject, css } from '@emotion/css';
-import { mix } from 'polished';
 import { useTheme } from '@/composables';
+import { light, lighter, dark } from '@/utils';
 
 const key = 'CButtonClass';
 
@@ -58,32 +58,28 @@ export const useButtonStyles = () => {
         [`&--${color}`]: {
           border: `1px solid ${theme.value.colors[color]}`,
           '&:focus': {
-            boxShadow: `0 0 0 3px ${mix(
-              0.5,
-              '#fff',
-              theme.value.colors[color],
-            )}`,
+            boxShadow: `0 0 0 3px ${light(theme.value.colors[color])}`,
           },
         },
         [`&--contained&--${color}`]: {
           backgroundColor: theme.value.colors[color],
           '&:hover:not(&:disabled)': {
-            backgroundColor: `${mix(0.05, '#000', theme.value.colors[color])}`,
-            borderColor: `${mix(0.05, '#000', theme.value.colors[color])}`,
+            backgroundColor: `${dark(theme.value.colors[color])}`,
+            borderColor: `${dark(theme.value.colors[color])}`,
           },
         },
         [`&--outlined&--${color}`]: {
           border: `1px solid ${theme.value.colors[color]}`,
           color: theme.value.colors[color],
           '&:hover:not(&:disabled)': {
-            backgroundColor: `${mix(0.9, '#fff', theme.value.colors[color])}`,
+            backgroundColor: `${lighter(theme.value.colors[color])}`,
           },
         },
         [`&--text&--${color}`]: {
           border: 'none',
           color: theme.value.colors[color],
           '&:hover:not(&:disabled)': {
-            backgroundColor: `${mix(0.9, '#fff', theme.value.colors[color])}`,
+            backgroundColor: `${lighter(theme.value.colors[color])}`,
           },
           '&:focus': {
             boxShadow: 'none',
