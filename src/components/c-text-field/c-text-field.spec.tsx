@@ -7,8 +7,8 @@ import { CTextField } from './c-text-field';
 describe('CTextField', () => {
   it('should render the component correctly', () => {
     const container = render(<CTextField />);
-    const inputs = container.baseElement.getElementsByTagName('input');
-    expect(inputs.length).toBe(1);
+    const input = container.baseElement.querySelector('input');
+    expect(input).toBeInTheDocument();
   });
 
   it('should display the given label', () => {
