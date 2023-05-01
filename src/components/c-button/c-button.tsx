@@ -1,42 +1,47 @@
 import { defineComponent, computed, PropType } from 'vue';
-import { celeste } from '@/celeste';
+import merge from 'lodash/merge';
+import { celeste, HTMLCelesteProps } from '@/celeste';
+import { type Assign } from '@/types';
 import { useButtonStyles } from './c-button.styles';
+
+export type CButtonProps = Assign<
+  HTMLCelesteProps<'button'>,
+  {
+    color?: 'primary' | 'success' | 'info' | 'warning' | 'danger';
+    disabled?: boolean;
+    fullWidth?: boolean;
+    size?: 'small' | 'medium' | 'large';
+    variant?: 'contained' | 'outlined' | 'text';
+  }
+>;
+
+const defaultProps = {
+  color: 'primary',
+  size: 'medium',
+  variant: 'contained',
+};
 
 export const CButton = defineComponent({
   name: 'CButton',
   props: {
-    size: {
-      type: String as PropType<'small' | 'medium' | 'large'>,
-      default: 'medium',
-    },
-    color: {
-      type: String as PropType<
-        'primary' | 'success' | 'info' | 'warning' | 'danger'
-      >,
-      default: 'primary',
-    },
-    fullWidth: {
-      type: Boolean,
-    },
-    variant: {
-      type: String as PropType<'contained' | 'outlined' | 'text'>,
-      default: 'contained',
-    },
-    disabled: {
-      type: Boolean,
-    },
+    size: String as PropType<CButtonProps['size']>,
+    color: String as PropType<CButtonProps['color']>,
+    fullWidth: Boolean as PropType<CButtonProps['fullWidth']>,
+    variant: String as PropType<CButtonProps['variant']>,
+    disabled: Boolean as PropType<CButtonProps['disabled']>,
   },
   emits: ['click'],
-  setup(props, { slots, emit }) {
+  setup(_props, { slots, emit, attrs }) {
+    const props = computed(() => merge({}, defaultProps, _props, attrs));
     const baseClass = useButtonStyles();
 
     const classes = computed(() => [
       baseClass.value,
-      `${baseClass.value}--${props.size}`,
-      `${baseClass.value}--${props.variant}`,
-      `${baseClass.value}--${props.color}`,
+      `${baseClass.value}--${props.value.size}`,
+      `${baseClass.value}--${props.value.variant}`,
+      `${baseClass.value}--${props.value.color}`,
       {
-        [`${baseClass.value}--full-width`]: props.fullWidth,
+        [`${baseClass.value}--full-width`]: props.value.fullWidth,
       },
     ]);
 
@@ -47,10 +52,11 @@ export const CButton = defineComponent({
 
     return () => (
       <celeste.button
-        disabled={props.disabled}
+        disabled={props.value.disabled}
         class={classes.value}
         type="button"
         onClick={handleClick}
+        {...attrs}
       >
         {slots.default?.()}
       </celeste.button>
