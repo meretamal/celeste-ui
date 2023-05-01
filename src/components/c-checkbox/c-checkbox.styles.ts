@@ -1,7 +1,7 @@
 import { provide, computed, readonly, inject, ComputedRef } from 'vue';
-import { mix } from 'polished';
 import { CSSObject, css } from '@emotion/css';
 import { useTheme } from '@/composables';
+import { light } from '@/utils';
 
 const key = 'CCheckbox';
 
@@ -82,7 +82,7 @@ export const useCheckboxStyles = () => {
         },
         [`&--${color} &__input[aria-disabled="false"]:focus`]: {
           borderColor: theme.value.colors[color],
-          boxShadow: `0 0 0 3px ${mix(0.5, '#fff', theme.value.colors[color])}`,
+          boxShadow: `0 0 0 3px ${light(theme.value.colors[color])}`,
         },
       }),
       {},
