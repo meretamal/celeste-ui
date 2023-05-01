@@ -1,7 +1,7 @@
 import { provide, computed, readonly, inject, ComputedRef } from 'vue';
 import { CSSObject, css } from '@emotion/css';
-import { mix } from 'polished';
 import { useTheme } from '@/composables';
+import { light } from '@/utils';
 
 const key = 'CSelectClass';
 
@@ -53,18 +53,18 @@ export const useSelectStyles = () => {
       (prev, color) => ({
         ...prev,
         [`&--${color} &__input:focus`]: {
-          boxShadow: `0 0 0 3px ${mix(0.5, '#fff', theme.value.colors[color])}`,
+          boxShadow: `0 0 0 3px ${light(theme.value.colors[color])}`,
           borderColor: theme.value.colors[color],
         },
       }),
       {},
     ),
     '&--error &__input': {
-      boxShadow: `0 0 0 3px ${mix(0.5, '#fff', theme.value.colors.danger)}`,
+      boxShadow: `0 0 0 3px ${light(theme.value.colors.danger)}`,
       borderColor: theme.value.colors.danger,
       '&:focus': {
         outline: 'none',
-        boxShadow: `0 0 0 3px ${mix(0.5, '#fff', theme.value.colors.danger)}`,
+        boxShadow: `0 0 0 3px ${light(theme.value.colors.danger)}`,
         borderColor: theme.value.colors.danger,
       },
     },
