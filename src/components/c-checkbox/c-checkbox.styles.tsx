@@ -12,65 +12,63 @@ export const useCheckboxStyles = () => {
     display: 'flex',
     alignItems: 'center',
     '&--small': {
-      gap: '1.5rem',
+      gap: '0.5rem',
     },
     '&--medium': {
-      gap: '1.75rem',
+      gap: '0.75rem',
     },
     '&--large': {
-      gap: '2rem',
+      gap: '1rem',
     },
     '&__input': {
       position: 'relative',
-      width: 0,
       cursor: 'pointer',
-      '&::before': {
-        boxSizing: 'border-box',
-        content: '""',
-        border: '2px solid #bdbdbd',
-        position: 'absolute',
-        transition: 'all 0.1s ease-in-out',
-        height: '100%',
+      border: '2px solid #bdbdbd',
+      transition: 'all 0.1s ease-in-out',
+      height: '100%',
+      '&:focus': {
+        outline: 'none',
       },
       '&::after': {
         position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
         visibility: 'hidden',
         content:
-          "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='3' stroke='white' class='w-6 h-6'><path stroke-linecap='round' stroke-linejoin='round' d='M4.5 12.75l6 6 9-13.5' /></svg>\")",
+          "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='3' stroke='white'><path stroke-linecap='round' stroke-linejoin='round' d='M4.5 12.75l6 6 9-13.5' /></svg>\")",
         height: '100%',
       },
-      '&:checked::after': {
+      '&[aria-checked="true"]::after': {
         visibility: 'visible',
       },
-      '&:disabled, &[disabled]': {
+      '&[aria-disabled="true"]': {
         cursor: 'not-allowed',
       },
     },
     '&--small &__input': {
       height: '0.75rem',
+      width: '0.75rem',
+      borderRadius: '2px',
     },
     '&--medium &__input': {
       height: '1rem',
+      width: '1rem',
+      borderRadius: '3px',
     },
     '&--large &__input': {
       height: '1.25rem',
-    },
-    '&--small &__input::before': {
-      borderRadius: '2px',
-    },
-    '&--medium &__input::before': {
-      borderRadius: '3px',
-    },
-    '&--large &__input::before': {
+      width: '1.25rem',
       borderRadius: '4px',
     },
-    '&--small &__input::before, &--small &__input::after': {
+    '&--small &__input::after': {
+      top: 0,
       width: '0.75rem',
     },
-    '&--medium &__input::before, &--medium &__input::after': {
+    '&--medium &__input::after': {
       width: '1rem',
     },
-    '&--large &__input::before, &--large &__input::after': {
+    '&--large &__input::after': {
       width: '1.25rem',
     },
     ...(
@@ -78,11 +76,11 @@ export const useCheckboxStyles = () => {
     ).reduce(
       (prev, color) => ({
         ...prev,
-        [`&--${color} &__input:checked::before`]: {
+        [`&--${color} &__input[aria-checked="true"]`]: {
           backgroundColor: theme.value.colors[color],
           borderColor: theme.value.colors[color],
         },
-        [`&--${color} &__input:focus::before`]: {
+        [`&--${color} &__input[aria-disabled="false"]:focus`]: {
           borderColor: theme.value.colors[color],
           boxShadow: `0 0 0 3px ${mix(0.5, '#fff', theme.value.colors[color])}`,
         },

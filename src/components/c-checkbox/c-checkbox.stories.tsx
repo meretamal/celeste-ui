@@ -18,6 +18,15 @@ export default {
         defaultValue: { summary: '"primary"' },
       },
     },
+    defaultChecked: {
+      control: { type: 'boolean' },
+      description: 'Checks the input in the initial render',
+      defaultValue: false,
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
     disabled: {
       control: { type: 'boolean' },
       description: 'Sets the disabled property of the checkbox',
