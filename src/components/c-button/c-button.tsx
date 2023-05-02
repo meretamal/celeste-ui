@@ -1,4 +1,4 @@
-import { defineComponent, computed } from 'vue';
+import { defineComponent, computed, PropType } from 'vue';
 import merge from 'lodash/merge';
 import { celeste, HTMLCelesteProps } from '@/celeste';
 import { type Assign } from '@/types';
@@ -21,8 +21,15 @@ const defaultProps = {
   variant: 'contained',
 };
 
-export const CButton = defineComponent<CButtonProps>({
+export const CButton = defineComponent({
   name: 'CButton',
+  props: {
+    size: String as PropType<CButtonProps['size']>,
+    color: String as PropType<CButtonProps['color']>,
+    fullWidth: Boolean as PropType<CButtonProps['fullWidth']>,
+    variant: String as PropType<CButtonProps['variant']>,
+    disabled: Boolean as PropType<CButtonProps['disabled']>,
+  },
   emits: ['click'],
   setup(_props, { slots, emit, attrs }) {
     const props = computed(() => merge({}, defaultProps, _props, attrs));
