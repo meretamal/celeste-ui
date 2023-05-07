@@ -1,9 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { RenderOptions, render, screen } from '@testing-library/vue';
+import { render, screen, RenderOptions } from '@testing-library/vue';
 import { CTypography } from './c-typograpy';
 
 const renderComponent = (props?: RenderOptions['props']) =>
-  render(CTypography, { slots: { default: 'Hello world' }, props });
+  render(<CTypography {...props}>Hello world</CTypography>);
 
 describe('CTypography', () => {
   it('should render the given text', () => {

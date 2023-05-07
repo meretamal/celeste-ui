@@ -27,7 +27,8 @@
     "import/no-extraneous-dependencies": "off",
     "import/prefer-default-export": "off",
     "react/jsx-props-no-spreading": "off",
-    "@typescript-eslint/restrict-template-expressions": "off"
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "vue/require-default-prop": "off"
   },
   "settings": {
     "import/resolver": {

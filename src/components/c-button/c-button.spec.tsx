@@ -5,7 +5,7 @@ import { render, RenderOptions, screen, fireEvent } from '@testing-library/vue';
 import { CButton } from './c-button';
 
 const renderComponent = (props?: RenderOptions['props']) =>
-  render(CButton, { slots: { default: 'Click me' }, props });
+  render(<CButton {...props}>Click me</CButton>);
 
 describe('CButton', () => {
   it('should render the component correctly', () => {

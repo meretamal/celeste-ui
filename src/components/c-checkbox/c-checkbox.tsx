@@ -1,74 +1,85 @@
 import { computed, defineComponent, PropType, ref } from 'vue';
-import { celeste } from '@/celeste';
+import merge from 'lodash/merge';
+import { celeste, HTMLCelesteProps } from '@/celeste';
+import { Assign } from '@/types';
 import { useCheckboxStyles } from './c-checkbox.styles';
+
+export type CCheckboxProps = Assign<
+  HTMLCelesteProps<'div'>,
+  {
+    color?: 'primary' | 'success' | 'info' | 'warning' | 'danger';
+    defaultChecked?: boolean;
+    disabled?: boolean;
+    id?: string;
+    label?: string;
+    modelValue?: (string | number)[] | boolean;
+    size?: 'small' | 'medium' | 'large';
+    value?: string | number;
+  }
+>;
+
+const defaultProps = {
+  color: 'primary',
+  size: 'medium',
+};
 
 export const CCheckbox = defineComponent({
   name: 'CCheckbox',
   props: {
     modelValue: {
-      type: [Array, Boolean],
-      default: () => [],
-    },
-    color: {
-      type: String as PropType<
-        'primary' | 'success' | 'info' | 'warning' | 'danger'
-      >,
-      default: 'primary',
-    },
-    size: {
-      type: String as PropType<'small' | 'medium' | 'large'>,
-      default: 'medium',
-    },
-    value: {
-      type: [String, Number],
-      default: null,
-    },
-    label: {
-      type: String,
-      default: null,
-    },
-    disabled: {
-      type: Boolean,
-    },
-    defaultChecked: {
-      type: Boolean,
-    },
-    id: {
-      type: String,
+      type: [Array, Boolean] as PropType<CCheckboxProps['modelValue']>,
       default: undefined,
     },
+    color: String as PropType<CCheckboxProps['color']>,
+    size: String as PropType<CCheckboxProps['size']>,
+    value: [String, Number] as PropType<CCheckboxProps['value']>,
+    label: String as PropType<CCheckboxProps['label']>,
+    disabled: Boolean as PropType<CCheckboxProps['disabled']>,
+    defaultChecked: Boolean as PropType<CCheckboxProps['defaultChecked']>,
+    id: String as PropType<CCheckboxProps['id']>,
   },
   emits: ['update:modelValue', 'input', 'change'],
-  setup(props, { emit }) {
-    const internalChecked = ref(props.defaultChecked);
+  setup(_props, { emit, attrs }) {
+    const props = computed(() => merge({}, defaultProps, _props, attrs));
+    const internalChecked = ref(props.value.defaultChecked);
 
     const isChecked = computed(() => {
-      if (Array.isArray(props.modelValue)) {
-        return props.modelValue.length > 0
-          ? props.modelValue.includes(props.value)
-          : internalChecked.value;
+      if (props.value.modelValue !== undefined) {
+        if (Array.isArray(props.value.modelValue)) {
+          return (
+            props.value.value !== undefined &&
+            props.value.modelValue.includes(props.value.value)
+          );
+        }
+        return props.value.modelValue;
       }
-      return props.modelValue;
+      return internalChecked.value;
     });
 
     const baseClass = useCheckboxStyles();
     const containerClasses = computed(() => [
       baseClass.value,
-      `${baseClass.value}--${props.color}`,
-      `${baseClass.value}--${props.size}`,
+      `${baseClass.value}--${props.value.color}`,
+      `${baseClass.value}--${props.value.size}`,
     ]);
     const inputClasses = computed(() => [`${baseClass.value}__input`]);
 
     const handleInput = () => {
       const newCheckedState = !isChecked.value;
-      if (Array.isArray(props.modelValue)) {
-        const index = props.modelValue.indexOf(props.value);
+      if (
+        Array.isArray(props.value.modelValue) &&
+        props.value.value !== undefined
+      ) {
+        const index = props.value.modelValue.indexOf(props.value.value);
         if (newCheckedState && index === -1) {
-          emit('update:modelValue', [...props.modelValue, props.value]);
+          emit('update:modelValue', [
+            ...props.value.modelValue,
+            props.value.value,
+          ]);
         } else if (!newCheckedState && index !== -1) {
           emit('update:modelValue', [
-            ...props.modelValue.slice(0, index),
-            ...props.modelValue.slice(index + 1),
+            ...props.value.modelValue.slice(0, index),
+            ...props.value.modelValue.slice(index + 1),
           ]);
         }
       } else {
@@ -80,7 +91,7 @@ export const CCheckbox = defineComponent({
     };
 
     const handleClick = (event: Event) => {
-      if (props.disabled) {
+      if (props.value.disabled) {
         event.stopPropagation();
         return;
       }
@@ -88,7 +99,10 @@ export const CCheckbox = defineComponent({
     };
 
     const handleKeyPress = (event: KeyboardEvent) => {
-      if (props.disabled || !(event.key === 'Enter' || event.key === ' ')) {
+      if (
+        props.value.disabled ||
+        !(event.key === 'Enter' || event.key === ' ')
+      ) {
         event.stopPropagation();
         return;
       }
@@ -97,19 +111,23 @@ export const CCheckbox = defineComponent({
 
     return () => (
       <celeste.div class={containerClasses.value}>
-        <div
+        <celeste.div
           class={inputClasses.value}
           role="checkbox"
           onClick={handleClick}
           onKeypress={handleKeyPress}
-          tabindex={props.disabled ? -1 : 0}
-          aria-disabled={props.disabled}
+          tabindex={props.value.disabled ? -1 : 0}
+          aria-disabled={props.value.disabled}
           aria-checked={isChecked.value}
-          aria-labelledby={props.id}
+          aria-labelledby={props.value.id}
+          {...attrs}
         />
-        {props.label && (
-          <celeste.label class={`${baseClass.value}__label`} id={props.id}>
-            {props.label}
+        {props.value.label && (
+          <celeste.label
+            class={`${baseClass.value}__label`}
+            id={props.value.id}
+          >
+            {props.value.label}
           </celeste.label>
         )}
       </celeste.div>
