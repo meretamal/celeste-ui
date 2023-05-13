@@ -31,7 +31,6 @@ export const useCheckboxStyles = () => {
       },
       '&::after': {
         position: 'absolute',
-        top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
         visibility: 'hidden',
@@ -62,13 +61,15 @@ export const useCheckboxStyles = () => {
       borderRadius: '4px',
     },
     '&--small &__input::after': {
-      top: 0,
+      top: '-20%',
       width: '0.75rem',
     },
     '&--medium &__input::after': {
+      top: '35%',
       width: '1rem',
     },
     '&--large &__input::after': {
+      top: '40%',
       width: '1.25rem',
     },
     ...(
