@@ -26,7 +26,8 @@
     "build-storybook": "build-storybook",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "chromatic": "npx chromatic"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
@@ -46,6 +47,7 @@
     "@vitejs/plugin-vue-jsx": "^3.0.1",
     "@vitest/coverage-c8": "^0.30.1",
     "@vue/eslint-config-airbnb-with-typescript": "^7.0.0",
+    "chromatic": "^6.19.9",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.8.0",
     "eslint-config-standard-with-typescript": "^34.0.1",
@@ -67,5 +69,7 @@
   "peerDependencies": {
     "@emotion/css": ">=11.0.0",
     "vue": ">=3.0.0"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "celeste-ui@0.4.0"
 }
