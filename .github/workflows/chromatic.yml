@@ -3,7 +3,10 @@ name: 'Chromatic'
 on:
   push:
     branches:
-        - main
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -11,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Set up Node.js v16
         uses: actions/setup-node@v3
